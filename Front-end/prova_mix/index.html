@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poluição Mundo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="paises">
+        <select id="pais"></select>
+    </div>
+    <div class="grafico">
+        <canvas width="800" height="620" id="grafico"></canvas>
+        <div class="status-color red"></div> Ozone pollution
+        <div class="status-color blue"></div>Household pollution from solid fuels
+        <div class="status-color yellow"></div>Outdoor particulate matter
+    </div>
+    <script src="./loadData.js"></script>
+    <script src="./grafico.js"></script>
+</body>
+</html>

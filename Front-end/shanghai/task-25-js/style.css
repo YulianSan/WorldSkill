@@ -1,0 +1,33 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 200vh;
+    cursor: url(mouse.png), pointer;
+}
+
+.mouse-efeito{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: rgb(128, 128, 128, .3);
+}
+
+.mouse-efeito.active{
+    animation: click .3s linear;
+}
+
+@keyframes click {
+    0%, 100%{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(60);
+    }
+}

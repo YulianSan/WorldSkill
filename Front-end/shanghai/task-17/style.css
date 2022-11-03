@@ -1,0 +1,60 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circulo{
+    border-radius: 50%;
+}
+.maior{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(206, 206, 206);
+    overflow: hidden;
+}
+
+.menor{
+    z-index: 11;
+    text-align: center;
+    width: 85%;
+    height: 85%;
+    background-color: #fff;
+}
+
+#porcentagem{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 170px;
+}
+.preenchimento{
+    z-index: 10;
+    position: absolute;
+    background-color: rgb(107, 107, 255);
+}
+.p1{
+    
+    left: 50%;
+    width: 50%;
+    height: 100%;
+}
+
+.p2{
+    bottom: -10px;
+    left: 5%;
+    width: 50%;
+    height: 30%;
+    transform: rotate(45deg);
+}

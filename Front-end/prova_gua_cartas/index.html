@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jogo da memoria</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome">
+    <h2 class="title">Welcome to the Guatemala Memory Game</h2>
+    <button id="start-game">Start Game</button>
+  </div>
+  <div id="game" class="hidden">
+    
+    <div class="cartas">
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-01.jpg" alt="carta 1"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-02.jpg" alt="carta 2"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-03.jpg" alt="carta 3"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-04.jpg" alt="carta 4"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-05.jpg" alt="carta 5"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-06.jpg" alt="carta 6"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-07.jpg" alt="carta 7"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-08.jpg" alt="carta 8"></div>
+        
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-09.jpg" alt="carta 9"></div>
+
+      <div class="carta">
+        <div class="back-face"></div>
+        <img class="front-face" src="./img/memo-10.jpg" alt="carta 10"></div>
+
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-01.jpg" alt="carta 1"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-02.jpg" alt="carta 2"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-03.jpg" alt="carta 3"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-04.jpg" alt="carta 4"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-05.jpg" alt="carta 5"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-06.jpg" alt="carta 6"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-07.jpg" alt="carta 7"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-08.jpg" alt="carta 8"></div>
+          
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-09.jpg" alt="carta 9"></div>
+  
+        <div class="carta">
+          <div class="back-face"></div>
+          <img class="front-face" src="./img/memo-10.jpg" alt="carta 10"></div>
+    </div>
+    
+    <div class="status">
+      <div class="painel">
+        <table>
+          <thead>
+            <tr>
+              <th>Tentativas</th>
+              <th>Acertos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="tentativas">0</td>
+              <td id="acertos">0</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+      <button id="rank">Rank</button>
+      
+    </div>
+    
+  </div>
+  <div id="ganhou" class="hidden">
+    <h2 class="title">Vitória</h2>
+    <form id="salvar">
+      <input type="text" id="name" placeholder="Insira um nick"><br>
+      <p id="error"></p>
+      <button type="submit" id="save-game">Ok</button>
+    </form>
+    <table id="table-rank">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Tentativas</th>
+        </tr>
+      </thead>
+      <tbody id="rank-row">
+       
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">top 10 jogadores com menos tentativas</td>
+        </tr>
+      </tfoot>
+    </table>
+    
+    <!-- <button id="reset-game">Reset Game</button> -->
+  </div>
+
+  <script src="./start_game.js"></script>
+  <script src="./save-game.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.letreiro{
+    position: relative;
+    width: 60%;
+    height: 100px;
+    overflow: hidden;
+}
+.letreiro > span{
+    display: block;
+    position: absolute;
+    left: 0%;
+    transform: translateX(-100%);
+    animation: letreiro 3s linear infinite;
+    white-space: nowrap;
+}
+@keyframes letreiro {
+    0%{
+        transform: translateX(-100%);
+        left: 0%;
+    }
+    100%{
+        transform: translateX(0%);
+        left: 100%;
+    }
+}

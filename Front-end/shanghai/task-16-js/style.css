@@ -1,0 +1,69 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.paleta{
+    width: 100%;
+    height: 80px;
+}
+
+.color{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.black{
+    background-color: black;
+}
+.blue{
+    background-color: blue;
+}
+#canvas{
+    border: 1px solid black;
+}
+.base-canvas{
+    position: relative;
+    display: inline-block;
+    
+}
+.resize{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    background-color: white;
+
+}
+
+.h{
+    top: 50%;
+    right: 0px;
+    transform: translate(50%, -50%);
+    cursor: e-resize;
+}
+
+.v{
+    top: calc(100% - 4px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: n-resize;
+}
+
+.hv{
+    top: calc(100% - 4px);
+    right: 0px;
+    transform: translate(50%, -50%);
+    cursor: se-resize;
+}

@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    height: 100vh;
+	background-color: #ff9900;
+}
+#welcome, #ganhou{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+}
+
+#ganhou{
+    padding-top: 10%;
+}
+.title {
+    font-size: 40px;
+    
+    font-weight: bold;
+    color: white;
+}
+
+#start-game, #reset-game, #save-game    {
+    border: none;
+    background-color: #ffcb7c;
+    padding: 10px 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+
+#save-game:disabled{
+    background-color: #728374;
+    color: rgb(204, 204, 204);
+    cursor: default;
+}
+
+#save-game{
+    background-color: #61c972;
+}
+#game{
+    margin: 0px auto;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.cartas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    transform-style: preserve-3d;
+    perspective: 1500px;
+    transition: all 1s;
+}
+
+.cartas.center{
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cartas.center > .carta{
+    position: absolute;
+}
+.carta{
+    position: relative;
+    left: initial;
+    top: initial;
+    width: 130px;
+    height: 130px;
+
+    margin: 20px;
+    transition: all 1s;
+    
+}
+.back-face, .front-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+}
+
+.back-face{
+    background-color: brown;
+}
+
+.front-face{
+    object-fit: contain;
+    backface-visibility: hidden;
+}
+.carta > .back-face , .carta > .front-face{
+    transform: rotateY(180deg);
+}
+
+.carta.animar > .back-face , .carta.animar > .front-face{
+    transform: rotateY(360deg);
+}
+
+
+.status{
+    position: relative;
+    height: 80vh;
+    width: 300px;
+
+    margin-bottom: 2vh;
+}
+
+.painel{
+    
+    width: 100%;
+    height: auto;
+    padding: 20px 0px;
+    border-radius: 20px;
+    background-color: #ffcb7c;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.479);
+}
+.painel > table{
+    width: 100%;
+    text-align: left;
+    color: white;
+}
+.painel th{
+    color: #fff2e4;
+}
+.painel td, .painel th{
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+#rank{
+    position: absolute;
+    left: 100%;
+    transform: translate(-100%, 10px);
+    padding: 5px 30px;
+    border: none;
+    background-color:#ff7b00 ;
+
+    border-radius: 5px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
+.hidden{
+    display: none !important;
+}
+
+#name{
+    padding: 10px;
+    border: none;
+    color: #331f00;
+    font-size: 16px;
+    border-radius: 5px;
+}
+form{
+    text-align: center;
+}
+#name:focus{
+    outline: none;
+}
+
+#error{
+    color: rgb(250, 250, 250);
+    padding: 10px;
+    text-align: left;
+}
+
+#table-rank{
+    margin-top: 50px;
+    border-spacing: 0px;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.137);
+    background-image: linear-gradient( -45deg, #ff7b00, #ffb547);
+
+}
+#table-rank td, #table-rank th{
+    padding: 10px 50px;
+}
+
+
+
+
+#table-rank thead th{
+   border-bottom: 2px solid rgba(255, 255, 255, 0.13);
+}

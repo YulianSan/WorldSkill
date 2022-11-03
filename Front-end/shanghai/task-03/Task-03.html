@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///C:/Users/SENAI/Desktop/Yulian/Front-end/shanghai/task-03/index.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-03</title>
+    <link rel="stylesheet" href="./Task-03_files/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="desc">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus accusamus possimus obcaecati explicabo? Consectetur consequatur laborum repudiandae velit? Ex dolor eum numquam autem exercitationem eaque eligendi labore, commodi ratione ut?
+        </div>
+        
+        
+        <div class="images">
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+                
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+                
+            </div>
+            <div class="imagem">
+                
+                <img src="./Task-03_files/img_exp.webp" alt="">
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem" style="--i: &#39;+ 4&#39;">
+                
+                <img src="./Task-03_files/img_exp.webp" alt="">
+            </div>
+            <div class="imagem" style="--i: &#39;+ 3&#39;">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+            <div class="imagem" style="--i: &#39;+ 2&#39;">
+
+                <img src="./Task-03_files/img_exp.webp" alt="">
+            </div>
+            <div class="imagem" style="--i: &#39;+ 1&#39;">
+                <img src="./Task-03_files/img_exp.webp" alt="">
+
+            </div>
+        </div>
+        <div class="footer">
+            <button id="btn_remove">Remover primeiro item</button>
+        </div>
+    </div>
+    <script>
+        const btn_remove = document.getElementById('btn_remove');
+        const galeria = document.getElementsByClassName('images')[0];
+
+        btn_remove.addEventListener('click', remove);
+
+        function remove(){
+            galeria.removeChild(galeria.firstChild);
+            galeria.removeChild(galeria.firstChild);
+        }
+    </script>
+
+</body></html>

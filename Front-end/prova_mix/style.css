@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.status-color{
+    width: 20px;
+    height: 20px;
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}

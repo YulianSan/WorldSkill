@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 04</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grupo_inp">
+        
+        
+        <input type="checkbox" id="is_open" checked>
+        <label id="inp" for="is_open">
+            <div id="inp_calendario"></div>
+        </label>
+        
+        <div class="calendario">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="control"><</th>
+                        <th colspan="5" id="mes">Mes</th>
+                        <th class="control">></th>
+                    </tr>
+                </thead>
+                <tbody id="days">
+                </tbody>
+            </table>
+        </div>
+
+        <label id="icon" for="is_open">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+        </label> 
+
+    </div>
+
+    <script src="calendario.js"></script>
+</body>
+</html>

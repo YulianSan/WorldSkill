@@ -1,0 +1,107 @@
+
+.dogs{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    height: 500px;
+    width: 100%;
+}
+
+.dog{
+    position: relative;
+    width: 43%;
+    height: 230px;
+    background-color: #519e8a;
+    border-radius: 35px;
+    overflow: hidden;
+}
+
+.imagem{
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: top .4s;
+    transition-delay: .2s;
+}
+
+.imagem img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.dados{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 30%;
+    padding: 5px 15px;
+    background-color: white;
+    color: #2c4674;
+}
+
+.dados h3{
+    font-family: 'MontserratBold';
+    font-weight: normal;
+}
+.dados h4{
+    font-family: 'MontserratMedium';
+    font-weight: lighter;
+    font-size: 12px;
+}
+.dados input[type="checkbox"]{
+    display: none;
+}
+.dados .favoritar{
+    cursor: pointer;
+    position: absolute;
+    width: 24px;
+    height: 28px;
+    right: 20px;
+    bottom: 20px;
+    background-image: url(../imgs/hearthome.svg);
+}
+
+.dados input[type="checkbox"]:checked  ~ .favoritar{
+    background-image: url(../imgs/hearthome-active.svg);
+}
+
+
+.dog:hover .dados{
+    background-color: #519e8a;
+    color: white;
+}
+
+.dog:hover .dados .favoritar{
+    background-image: url(../imgs/hearthome-white.svg);
+}
+
+.dog:hover .dados input[type="checkbox"]:checked  ~ .favoritar{
+    background-image: url(../imgs/hearthome-white-active.svg);
+}
+
+.dog:hover .imagem{
+    top: -15px;
+}
+
+.animate{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    transition: width .5s, height .5s;
+}
+
+.dog:hover .imagem .animate{
+    background-color: white;
+    height: 250px;
+    width: 250px;
+}

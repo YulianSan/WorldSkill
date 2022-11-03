@@ -1,0 +1,116 @@
+#celular{
+    background-color: #cbe0db;
+    padding: 20px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    width: 100%;
+    height: 12%;
+}
+
+header > input[type="checkbox"]{
+    display: none;
+}
+
+.voltar{
+    width: 15%;
+    height: 50px;
+
+    background: url(../imgs/chevron-left.svg) center center no-repeat;
+}
+
+.titulo{
+    width: 70%;
+    height: auto;
+
+    text-align: center;
+    font-size: 25px;
+    font-family: 'MontserratRegular';
+    color: #354f7a;
+}
+
+.menu{
+    display: block;
+    width: 15%;
+    height: 50px;
+
+    background: url(../imgs/menu-open.svg) center center no-repeat;
+}
+
+.filtro{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 130px;
+
+}
+
+.conteiner-procurar{
+    display: flex;
+
+    width: 100%;
+    height: 50px;
+
+    border-radius: 25px;
+    background-color: #eaf3f1;
+    overflow: hidden;
+}
+
+.icon{
+    display: block;
+    width: 15%;
+    height: 50px;
+    
+    background: url(../imgs/search.svg) center center no-repeat;
+}
+#procurar{
+    width: 85%;
+    height: inherit;
+
+    border: none;
+    background-color: transparent;
+
+    font-family: 'MontserratRegular';
+    font-weight: lighter;
+    font-size: 18px;
+    color: #2c4674;
+}
+
+#procurar:focus{
+    outline: none;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 50px;
+
+    border-radius: 30px;
+    background-color: #eaf3f1;
+
+    font-family: 'MontserratMedium';
+    font-size: 17px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    color: #2c4674;
+}
+
+.link img{
+    transform: translateX(-20px);
+}
+.link.ativo{
+    background-color: #69ab9a;
+
+    color: white;
+}

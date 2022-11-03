@@ -1,0 +1,42 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.base{
+    position: relative;
+    width: 300px;
+    height: 60px;
+    
+    display: flex;
+    flex-direction: row;
+}
+.estrelas{
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 60px;
+    background: url(star.png) left center;
+    background-size: auto 100%;
+}
+.meia-estrela{
+    z-index: 10;
+    width: var(--i);
+    position: absolute;
+    height: 100%;
+}
+.meia-estrela:hover{
+    background: url(starCheia.png) left center;
+    background-size: auto 100%;
+}
+.meia-estrela:hover ~ .encher{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+}

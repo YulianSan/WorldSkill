@@ -1,0 +1,37 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 110vh;
+    overflow: hidden;
+}
+.img{
+    position: relative;
+    display: block;
+    width: 512px;
+    height: 473px;
+}
+.holofote{
+    display: none;
+}
+.img-holofote{
+    width: 100%;
+    object-fit: contain;
+}
+.holofote.active{
+    position: absolute;
+    display: initial;
+    left: 0px;
+    right: 0px;
+    min-width: 10px;
+    width: 100px;
+    max-width: 400px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .6;
+    filter: blur(5px);
+}
