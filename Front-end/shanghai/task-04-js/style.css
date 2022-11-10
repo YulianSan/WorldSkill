@@ -12,3 +12,7 @@ button{
     background-color: yellow;
     color: red;
 }
+
+body *:not(#texto){
+    user-select: none;
+}

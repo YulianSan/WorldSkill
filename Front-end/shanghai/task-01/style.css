@@ -3,3 +3,47 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+.blocos{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+
+    line-height: 100px;
+    text-align: center;
+
+    margin: 0px 10px;
+    border: 1px solid black;
+}
+
+#checkbox1:checked ~ #b1, #checkbox2:checked ~ #b2, #checkbox3:checked ~ #b3, #checkbox4:checked ~ #b4{
+    background-color: yellow;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+
+#checkbox1:not(:checked) ~ #checkbox2:not(:checked) ~ #checkbox3:not(:checked) ~ #checkbox4:not(:checked) ~ .result:not(#result0){
+    display: none;
+}
+
+#checkbox1:checked ~ #checkbox2:not(:checked) ~ #checkbox3:not(:checked) ~ #checkbox4:not(:checked) ~ .result:not(#result1){
+    display: none;
+}
+
+#checkbox1:checked ~ #checkbox2:checked ~ #checkbox3:not(:checked) ~ #checkbox4:not(:checked)~ .result:not(#result2){
+    display: none;
+}
+
+#checkbox1:checked ~ #checkbox2:not(:checked) ~ #checkbox3:checked ~ #checkbox4:not(:checked) ~ .result:not(#result3){
+    display: none;
+}
+
+#checkbox1:checked ~ #checkbox2:checked ~ #checkbox3:checked ~ #checkbox4:not(:checked) ~ .result:not(#result4){
+    display: none;
+}
+#checkbox1:not(:checked) ~ #checkbox2:not(:checked) ~ #checkbox3:checked ~ #checkbox4:not(:checked) ~ .result:not(#result5){
+    display: none;
+}
