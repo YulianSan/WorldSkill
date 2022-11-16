@@ -1,0 +1,128 @@
+body{
+    background-color: black;
+}
+
+.base_estrela{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+
+.estrela-lados{
+    width: 100%;
+    height: 100%;
+}
+
+.lado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1%;
+    height: 100%;
+
+    background-color: white;
+    animation: aumentar-explosao 1.5s forwards;
+}
+
+.l1{
+    transform: translate(-50%, -50%);
+}
+.l2{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.l3{
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.l4{
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.estrela{
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    /* background-color: black; */
+}
+
+.estrela > *{
+    animation: sumir 1s forwards;
+}
+.estrela{
+    animation: aumentar 1.5s forwards;
+}
+
+@keyframes aumentar {
+    0%{
+        width: 10%;
+        height: 10%;
+    }
+    100%{
+        width: 90%;
+        height: 90%;
+    }
+}
+@keyframes sumir {
+    to{
+        opacity: 0;
+    }
+}
+.ponta{
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 4%;
+    background-color: white;
+    box-shadow: 0px 0px 3px 1px white;
+}
+.fundo{
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 40%;
+    animation: diminuir-explosao 1.5s .2s forwards;
+    
+}
+
+@keyframes diminuir-explosao {
+    to{
+        width: 150%;
+        height: 150%;
+    }
+    
+}
+
+@keyframes aumentar-explosao {
+    from{
+        height: 40%;
+    }
+    to{
+        height: 150%;
+
+    }
+}
+.vertical{
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.horizontal{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.centro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 15%;
+    height: 15%;
+    box-shadow: 0px 0px 5px 2px white;
+}

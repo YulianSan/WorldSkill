@@ -15,8 +15,8 @@ function resizeText(){
         if(!sem) return;
         ellipsTexto(newText, newText.length);
     }
-    else if(wText + 40 < wBase){
-        // showText()
+    else if(wText + 30 < wBase){
+        showText(newText, newText.length);
 
     }
 
@@ -34,7 +34,13 @@ function ellipsTexto(textArray, length){
     let wText = texto.clientWidth;
     let wBase = base_texto.clientWidth;
     
-    do{
+    while(wText > wBase - 20){
+        
+        texto_retirado.push(
+            leftText.substring(leftText.length - 1, leftText.length),
+            rightText.substring(0, 1)
+        );
+
         leftText = leftText.substring(0, leftText.length - 1);
         rightText = rightText.substring(1, rightText.length);
 
@@ -43,7 +49,7 @@ function ellipsTexto(textArray, length){
         wBase = base_texto.clientWidth;
 
 
-    }while(wText > wBase - 20)
+    }
 }
 
 function showText(textArray, length){
@@ -56,14 +62,27 @@ function showText(textArray, length){
     let wText = texto.clientWidth;
     let wBase = base_texto.clientWidth;
     
-    do{
-        leftText = leftText.substring(0, leftText.length - 1);
-        rightText = rightText.substring(1, rightText.length);
+    while(wText + 30 < wBase){
+        if(texto_retirado.length <= 0) return;
 
-        texto.textContent = leftText + '...' + rightText;
+        leftText = leftText + texto_retirado[texto_retirado.length - 2];
+        rightText = texto_retirado[texto_retirado.length - 1] + rightText ;
+
+        // console.log(texto_retirado)
+
+        texto_retirado.pop();
+        texto_retirado.pop();
+
+        // console.log(texto_retirado)
+
+        if(texto_retirado.length <= 0 )
+            texto.textContent = leftText + rightText;
+        else
+            texto.textContent = leftText + '...' + rightText;
+
         wText = texto.clientWidth;
         wBase = base_texto.clientWidth;
 
 
-    }while(wText > wBase - 20)
+    }
 }

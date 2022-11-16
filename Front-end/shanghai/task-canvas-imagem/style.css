@@ -1,0 +1,21 @@
+.mostraCor{
+    position: absolute;
+    width: auto;
+    background-color: rgba(241, 241, 241, 0.479);
+    box-shadow: 0px 0px 10px #000000;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-100%, -100%);
+}
+
+#lupa{
+    position: absolute;
+    border: 1px solid black;
+    color: rgb(227, 205, 191);
+    border-radius: 50%;
+}
+
+#base-canvas{
+    max-width: min-content;
+    max-height: min-content;
+}

@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+}
+#out_text{
+    flex: none;    
+    width : 239px;
+    border: 1px solid rgb(192, 192, 192);
+}
+
+#input_text{
+    flex: none;        
+    overflow: scroll;
+    resize: none;
+}
