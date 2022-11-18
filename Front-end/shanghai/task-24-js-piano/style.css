@@ -1,0 +1,61 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+.base_piano{
+    position: relative;
+    background-color: rgb(96 72 48);
+    min-width: 600px;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.base_white{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    width: 85%;
+    height: 270px;
+}
+.base_black{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    width: 80%;
+    height: 120px;
+}
+
+.tecla_white{
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    user-select: none;
+    cursor: pointer;
+    
+}
+.tecla_black{
+    width: 6%;
+    background-color: black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}

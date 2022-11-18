@@ -17,13 +17,17 @@ body{
     position: relative;
     transform-style: preserve-3d;
     perspective: 2000px;
-    transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(336deg) rotateY(0deg) rotateZ(112deg);
     animation: rotacionar 2s linear infinite;
 }
 
 @keyframes rotacionar {
-    to{
-        transform: rotateX(360deg) rotateY(360deg);
+    50%{
+        transform: rotateX(336deg) rotateY(180deg) rotateZ(22deg);
+    }
+    100%{
+        transform: rotateX(336deg) rotateY(360deg) rotateZ(112deg);
+        
     }
 }
 .base_retangulo > *{

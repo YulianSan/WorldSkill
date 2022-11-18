@@ -1,0 +1,50 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.paint{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 240px;
+    height: 240px;
+}
+
+.pixel{
+    flex: none;
+    width: 15px;
+    height: 15px;
+    border: .5px solid #ccc;
+}
+
+.paleta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 260px;
+    height: auto;
+    gap: 2px;
+}
+
+.cor{
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #ddd;
+    cursor: pointer;
+}
+.selecionado{
+    border-color: yellow;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="base">
+        <h1>
+            <img src="title.png" alt="Price Range">
+        </h1>
+        <div class="price-range">
+            <input type="range" class="price" id="min" value="400" min="0" step="50" max="1000">
+            <div class="progress">
+                <div class="progress-blue"></div>
+            </div>
+            <input type="range" class="price" id="max" value="600"  min="0" step="50" max="1000">
+        </div>
+        <div class="max-min">
+            <h3 id="min-value">$ 400</h3>
+            <h3 id="max-value">$ 600</h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
