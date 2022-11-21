@@ -24,17 +24,30 @@
     border-radius: 5px;
   }
   
-  .item {
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-  }
+.item {
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
 
-  .item p{
-    font-size: 16px;
-  }
-  
-  .dragging {
-    cursor: move;
-    opacity: 0.3;
-  }
+.item p{
+  font-size: 16px;
+}
+
+.dragging {
+  cursor: move;
+  opacity: 0;
+}
+
+.img_drag{
+  position: absolute;
+  left: 0px;
+  transform: translateX(-200%);
+  display: inline-block;
+}
+
+.img_drag > .item{
+  position: relative;
+  transform: rotate(25deg);
+}
