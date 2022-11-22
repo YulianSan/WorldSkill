@@ -6,6 +6,9 @@
     font-size: 30px;
   }
   
+  body{
+    height: 200vh;
+  }
   .kanban {
     display: flex;
     justify-content: center;
@@ -20,7 +23,7 @@
     gap: 10px;
     padding: 10px;
     background-color: cadetblue;
-    min-width: 200px;
+    min-width: 270px;
     border-radius: 5px;
   }
   
@@ -29,25 +32,20 @@
   background-color: white;
   padding: 10px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .item p{
   font-size: 16px;
 }
-
-.dragging {
-  cursor: move;
+.dragging{
   opacity: 0;
+  cursor: move;
 }
-
-.img_drag{
+.drag_image{
+  display: none;
+  pointer-events: none;
   position: absolute;
-  left: 0px;
-  transform: translateX(-200%);
-  display: inline-block;
-}
-
-.img_drag > .item{
-  position: relative;
-  transform: rotate(25deg);
+  transform: rotate(10deg);
+  z-index: 10;
 }
