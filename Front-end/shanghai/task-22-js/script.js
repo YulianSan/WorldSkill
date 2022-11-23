@@ -14,8 +14,8 @@ document.addEventListener("dragstart", (e) => {
 });
 
 document.addEventListener("dragend", (e) => {
-  e.target.classList.remove("dragging");
   const img_drag = document.getElementsByClassName('drag_image')[0];
+  e.target.classList.remove("dragging");
 
   document.body.removeChild(img_drag);
 });
@@ -56,6 +56,7 @@ document.addEventListener('drag', (e)=>{
     let x = e.clientX - xI;
     let y = e.clientY - yI;
 
+    if(e.clientX == 0 ) {return;}
     console.log(x, y)
     
     crt.style.left = `${x}px`;

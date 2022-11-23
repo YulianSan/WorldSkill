@@ -1,0 +1,7 @@
+.svgColor{
+    filter: invert(100%);;
+}
+
+.select{
+    border: 5px solid black;
+}
