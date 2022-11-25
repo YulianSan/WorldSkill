@@ -17,6 +17,8 @@ body > *{
     min-width: 84px;
 }
 .pontos{
+    --left: 0px;
+    --right: 0px;
     flex: none;
     margin: 1px;
     min-width: 10px;
@@ -24,6 +26,21 @@ body > *{
     height: 10px;
     background-color: white;
     border-radius: 50%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+@keyframes animationTransition {
+    0%, 100%{
+        left: 0px;
+        top: 0px;
+    }
+    50%{
+        left: var(--left);
+        top: var(--top);
+    }
+    
 }
 .pontos.black{
     background-color: black;

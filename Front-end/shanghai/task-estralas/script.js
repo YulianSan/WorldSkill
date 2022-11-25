@@ -29,7 +29,7 @@ function gerarEstrelas(){
     setTimeout(
         ()=>{
             document.body.removeChild(element)
-        }, 2000
+        }, 1000
     )
 }
 

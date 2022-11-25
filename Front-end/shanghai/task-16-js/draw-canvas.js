@@ -1,4 +1,9 @@
 const baseCanvas = document.getElementsByClassName('base-canvas')[0];
+const cores = Array.from(document.getElementsByClassName('color'));
+
+cores.forEach( e =>{
+    e.addEventListener('click', ()=>chooseColor(e.classList[1]));
+})
 
 var isDraw = false;
 canvas.addEventListener('mousedown', inicioDraw);
@@ -18,4 +23,7 @@ function drawLine(e){
 function fimDraw(){
     isDraw = false;
     ctx.closePath();
+}
+function chooseColor(color){
+    ctx.strokeStyle = color;
 }

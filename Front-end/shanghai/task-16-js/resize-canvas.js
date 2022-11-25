@@ -2,10 +2,15 @@ const resize = Array.from(document.getElementsByClassName('resize'));
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+backgroundWhite();
 let isResize = false;
 let PosInicio = {x: 0, y: 0, i: -1};
 resize.forEach( addEventResize );
 
+function backgroundWhite(){
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 
 function addEventResize(v, i){
     
@@ -41,6 +46,13 @@ function inicio(e, i){
 function redimencionar(e){
     if(!isResize) return;
 
+    let saveCanvas = document.createElement('canvas');
+    let saveCtx = saveCanvas.getContext('2d');
+
+    saveCanvas.width = canvas.width;
+    saveCanvas.height = canvas.height;
+    saveCtx.drawImage(canvas, 0, 0);
+
     let diffPosX;
     let diffPosY;
 
@@ -68,7 +80,8 @@ function redimencionar(e){
             canvas.height = canvas.height + diffPosY;
         break;
     }
-    
+    backgroundWhite();
+    ctx.drawImage(saveCanvas, 0, 0);
 
 }
 function fim(){

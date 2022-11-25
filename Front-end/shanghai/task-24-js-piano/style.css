@@ -29,6 +29,8 @@ body{
     margin-top: 10%;
     width: 85%;
     height: 270px;
+    
+    gap: 2px;
 }
 .base_black{
     position: absolute;
@@ -44,18 +46,29 @@ body{
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
+    height: 100%;
     width: 100%;
     background-color: white;
-    border-radius: 10px;
-    border: 1px solid black;
+    box-shadow: inset 0px 0px 8px 0px rgba(0, 0, 0, 0.363),
+                0px 5px 10px black;
+    border: 1px solid white;
     user-select: none;
     cursor: pointer;
+    transition: all .1s linear;
     
 }
 .tecla_black{
-    width: 6%;
+    width: 8%;
     background-color: black;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     cursor: pointer;
+    box-shadow: inset 1px -1px 2px rgba(255, 255, 255, 0.363);
+    
+    border-bottom: 10px solid black;
+    border-left: 2px solid rgb(59, 59, 59);
+    border-right: 2px solid rgb(59, 59, 59);
+}
+
+.tecla_white.select{
+    height: 98%;
+    box-shadow: inset 0px 0px 8px 5px rgba(0, 0, 0, 0.363);
 }
