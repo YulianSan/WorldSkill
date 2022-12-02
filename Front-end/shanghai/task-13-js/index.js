@@ -11,6 +11,7 @@ function showOut(){
     let regexpList = /-{1}(( {0,}\S{1,} {0,}){1,})/gi;
     let regexpLink =/[^!]\[(( {0,}\S{1,} {0,}){1,})\]\((( {0,}\S{1,} {0,}){1,})\)/gi;
     let regexpImg =/[!]{1}\[(( {0,}\S{1,} {0,}){1,})\]\((( {0,}\S{1,} {0,}){1,})\)/gi;
+    let regexpImgUrl =/[!]{1}\[(( {0,}\S{1,} {0,}){1,})\]\((( {0,}\S{1,} {0,}){1,})\)/gi;
 
     textMarkdown = textMarkdown.replaceAll(/---/gi, '<hr>')
     textMarkdown = textMarkdown.replaceAll(regexpBold, '<b>$1</b>');

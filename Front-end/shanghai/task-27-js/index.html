@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 27</title>
+</head>
+<style>
+    main{
+        width: 80%;
+        min-width: 250px;
+        margin: 0px auto;
+    }
+    .media{
+        margin-left: 2rem;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    #medias{
+        margin-bottom: 10rem;
+    }
+    .media > *{
+        flex: none;
+    }
+    .valor{
+        max-width: 200px;
+    }
+    .title{
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 180%;
+        text-transform: uppercase;
+    }
+    #comentarios{
+        margin-top: 4rem;
+    }
+    .comentario{
+        padding: 2rem;
+        margin: 2rem 0px;
+        box-shadow: 10px 10px 30px 2px rgb(126, 135, 173);
+        border-radius: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .author{
+        color: black;
+        font-weight: bold;
+        font-size: 150%;
+    }
+    .content{
+        font-size: 130%;
+        color: #444;
+    }
+    .rating{
+        padding: 0px 5px;
+        border-right: 1px solid black;
+    }
+    .ratings{
+        text-align: right;
+    }
+</style>
+<body>
+    <main>
+
+        <h1>Hotéis</h1>
+        <div class="taxa_media">
+            <h2>Taxa Média</h2>
+            <div id="medias"></div>
+        </div>
+        
+        <div class="comentarios_base">
+            <h2>Comentários</h2>
+            <div id="comentarios"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

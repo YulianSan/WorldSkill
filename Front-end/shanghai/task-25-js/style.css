@@ -6,28 +6,46 @@
 
 body{
     height: 200vh;
-    cursor: url(mouse.png), pointer;
+    background-color: rgb(0, 0, 26);
+    overflow: hidden;
 }
 
-.mouse-efeito{
+.expandir{
+    pointer-events: none;
     position: absolute;
-    left: 100px;
-    top: 100px;
-    width: 1px;
-    height: 1px;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background-color: rgb(128, 128, 128, .3);
+    border: 5px solid white;
+    transform: translate(-50%, -50%);
+    animation: expandir .4s linear;
 }
-
-.mouse-efeito.active{
-    animation: click .3s linear;
+.seguir{
+    pointer-events: none;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 5px solid red;
+    border-radius: 50%;
 }
-
-@keyframes click {
-    0%, 100%{
-        transform: scale(0);
+.sumir{
+    animation: sumir .2s linear;
+}
+@keyframes sumir {
+    to{
+        transform: scale(.4);
+        opacity: 0;
     }
-    50%{
-        transform: scale(60);
+}
+@keyframes expandir {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        width: 250px;
+        height: 250px;
     }
 }

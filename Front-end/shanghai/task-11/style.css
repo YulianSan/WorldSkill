@@ -1,0 +1,113 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    overflow: hidden;
+    background-color: rgb(7 9 24);
+    animation: mudarCorFundo 20s linear infinite;
+}
+
+@keyframes mudarCorFundo {
+    0%, 100%{
+        background-color: rgb(7 9 24);
+    }
+    50%{
+        background-color: rgb(255 218 127);
+    }
+}
+.cenario{
+    background: url(./imagens/ceu_claro.png) center center no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    animation: alterarCenario 20s linear infinite;
+}
+
+.nuvem{
+    top: 100px;
+    position: absolute;
+    background: url(./imagens/nuvem_claro.png) center center no-repeat;
+    filter: hue-rotate(10deg);
+    background-size: contain;
+    width: 178px;
+    height: 110px;
+}
+
+@keyframes alterarNuvem {
+    0%, 100%{
+        background-image: url(./imagens/nuvem_escura.png);
+    }
+    50%{
+        background-image: url(./imagens/nuvem_claro.png);
+    }
+}
+.sol{
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 0px 10px white;
+    bottom: 0px;
+    animation: nascer 10s linear infinite;
+}
+
+@keyframes mudarEstrela {
+    
+}
+
+@keyframes nascer {
+    from{
+        box-shadow: 0px 0px 10px white;
+        
+    }
+    to{
+        bottom: 100%;
+        box-shadow: 0px 0px 100px 10px white;
+    }
+}
+.n1{
+    top: 200px;
+    left: 0px;
+    width: 270px;
+    height: 165px;
+    animation: moverNuvem 4s linear infinite, alterarNuvem 20s linear infinite;
+}
+
+.n2{
+    top: 50px;
+    animation: moverNuvem 4.2s linear infinite, alterarNuvem 20s linear infinite;
+
+}
+.n3{
+    width: 200px;
+    height: 135px;
+    top: 300px;
+    animation: moverNuvem 3.5s linear infinite, alterarNuvem 20s linear infinite;
+
+}
+
+@keyframes moverNuvem {
+    0%{
+        transform: translate(100vw, 0vh);
+    }
+    100%{
+        transform: translate(-100%, -10vh);
+    }
+}
+
+@keyframes alterarCenario {
+    0%, 100%{
+        background-image: url(./imagens/ceu_escuro.png);
+    }
+    50%{
+        background-image: url(./imagens/ceu_claro.png) ;
+    }
+    
+}
