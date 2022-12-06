@@ -1,0 +1,37 @@
+// mesma coisa que a task 02
+
+class WidgetTaxaCambio extends WP_Widget{
+        public function __construct()
+        {
+            parent::__construct(
+                'widget_cambio',
+                'Taxa De Câmbio'
+            );
+        }
+        public function form($instance){
+	// abro o json e converto ele em array
+            $taxa_cambio = json_decode(file_get_contents(plugin_dir_url( __FILE__ ).'include/dados.json'), true);
+            ?>
+		// exibo os valores
+                <div>Valor: <?php echo $taxa_cambio[0]['valor'] ?> </div>
+                <div>Última atualização: <?php echo $taxa_cambio[0]['data'] ?> </div>
+            <?php
+        }
+        public function widget($args, $instance){ 
+		// mesma coisa que a função form
+            $taxa_cambio = json_decode(file_get_contents(plugin_dir_url( __FILE__ ).'include/dados.json'), true);
+            echo $args['before_widget'];
+            echo "<div>Valor: ".$taxa_cambio[0]['valor'] . "</div>";
+            echo "<div>Última atualização: ".$taxa_cambio[0]['data'] . "</div>";
+            echo $args['after_widget'];
+        }
+        public function update($new_instance, $old_instance){
+
+        }
+    }
+
+    function register_widget_taxa_cambio(){
+        register_widget('WidgetTaxaCambio');
+    }
+
+    add_action( 'widgets_init', 'register_widget_taxa_cambio');

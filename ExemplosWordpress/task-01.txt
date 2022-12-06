@@ -1,0 +1,24 @@
+ALTERAR O LOGO DO WORDPRESS NO MENU LATERAL
+
+HOOK -> add_action('admin_bar_menu', 'funcao', 11); //é preciso o 11 para que de certo
+
+TUDO ISSO DENTRO DA FUNÇÃO
+
+global $wp_admin_bar;
+$wp_admin_bar->add_menu( array(
+        'id'    => 'wp-logo',
+        'title' => '<img src="'.plugins_url( 'includes/ws_logo.png', __FILE__ ).'" alt="logo" />',
+        'href'  => __('https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg'),
+        'meta'  => array(
+            'title' => __('Link Title'),
+        )
+) );
+
+--------------------------------------
+
+ALTERAR O LOGO DA PÁGINA DE LOGIN
+HOOK -> add_action( 'login_enqueue_scripts', 'funcao' );
+
+DENTRO DA FUNÇÃO
+É PRECISO CARREGAR UM CSS E ALTERAR O BACKGROUND DA DIV AONDE SE ENCONTRA O LOGO
+wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style.css' );

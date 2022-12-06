@@ -1,0 +1,79 @@
+class WidgetWhatsapp extends WP_Widget{
+    public function __construct()
+    {
+	// cria o widget passando o id, nome e uma descrição
+        parent::__construct(
+            'widget_whatsapp',
+            'Widget Whatsapp',
+            array('description' => 'Simples widget para adicionar um link de whatsapp de um contato com uma mensagem')
+            
+        );
+    }
+    public function form($instance)
+    {
+	// um formulario para preencher quando o widget é usado
+
+	//$instance é os dados que os campos já possuem
+	// vejo se existe valor, se sim uso esses valores, se não crio valores vazios
+        if(isset($instance['recipient'])){
+            $recipient = $instance['recipient'];
+        }
+        else $recipient = __('', 'wzap');
+        
+        if(isset($instance['message'])){
+            $message = $instance['message'];
+        }
+        else $message = __('Tap your message', 'wzap');
+        ?>
+        <p>
+		// get_field_id('recipient') cria um id personalizado para cada formulario
+		// get_field_name('recipient') cria um name personalizado para cada formulario
+            <label for="<?php echo $this->get_field_id('recipient') ?>"><?php _e('Recipient');?></label>
+            <input
+                placeholder="+0000000000"
+                class="widefat" type="text" id="<?php echo $this->get_field_id('recipient')?>" 
+                name="<?php echo $this->get_field_name('recipient') ?>"
+                value="<?php echo esc_attr($recipient) ?>" //coloco o valor do campo
+                onkeypress="
+                    if(event.target.value[0] !== '+')
+                        event.target.value = '+' + event.target.value;
+                    if(/[^0-9]/.test(event.key))
+                        event.preventDefault();
+                    if(event.target.value.length + 1 > 11)
+                        event.preventDefault();">
+            <label for="<?php echo $this->get_field_id('message') ?>"><?php _e('Message');?></label>
+            <input 
+                class="widefat" type="text" id="<?php echo $this->get_field_id('message')?>" 
+                name="<?php echo $this->get_field_name('message') ?>"
+                value="<?php echo esc_attr($message) ?>">
+        </p>
+        <?php
+    }
+    public function widget($args, $instance)
+    {
+	// essa é a saida do widget para o usuário
+        ?>
+
+        <span>
+            <a href="<?php echo esc_url("https://wa.me/". preg_replace("/^0{0,}/","",preg_replace("/[^0-9]/","",$instance['recipient']))."?text=".$instance['message']); ?>" target="_blank">clique em mim</a>
+        </span>
+        <?php
+    }
+    public function update($new_instance, $old_instance)
+    {
+        
+        //quando um novo formulario é enviado e preciso atualizar os dados 
+        $instance['recipient'] = $new_instance['recipient'];
+        $instance['message'] = $new_instance['message'];
+        
+		return $instance;
+    }
+}
+
+function register_widget_whatsapp(){
+	// registrar um widget
+	register_widget('WidgetWhatsapp');
+}
+//HOOK USADO PARA QUE O WIDGET POSSA SER REGISTRADO
+add_action('widgets_init', 'register_widget_whatsapp');
+
