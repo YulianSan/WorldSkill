@@ -1,0 +1,69 @@
+body{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 95px;
+    height: 95px;
+    animation: animation-load 2s infinite;
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.c{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+}
+@keyframes animation-load {
+    0%{
+        transform: rotate(0deg);
+        width: 120px;
+        height: 120px;
+    }
+    12.5%{
+        width: 95px;
+        height: 95px;
+    }
+    25%{
+        transform: rotate(90deg);
+        width: 120px;
+        height: 120px;
+    }
+    37.5%{
+        width: 95px;
+        height: 95px;
+    }
+    50%{
+        transform: rotate(180deg);
+         width: 120px;
+        height: 120px;
+    }
+    62.5%{
+        width: 95px;
+        height: 95px;
+    }
+    75%{
+        transform: rotate(270deg);
+         width: 120px;
+        height: 120px;
+    }
+    87.5%{
+        width: 95px;
+        height: 95px;
+    }
+    100%{
+        transform: rotate(360deg);
+         width: 120px;
+        height: 120px;
+    }
+}

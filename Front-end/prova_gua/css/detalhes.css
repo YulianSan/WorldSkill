@@ -1,0 +1,123 @@
+#celular{
+    background-color: var(--bg);
+}
+
+.back{
+    position: absolute;
+    left: 25px;
+    top: 45px;
+    width: 40px;
+    height: 40px;
+    background: url(../imgs/chevron-left-white.svg) center center no-repeat;
+    background-size: contain;
+    transition: transform .5s;
+    cursor: pointer;
+}
+.pet{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 500px;
+    background: var(--img) no-repeat;
+    background-position: bottom var(--b) center;
+    background-size:var(--h) auto;
+    background-color: var(--bg_esc);
+    
+    border-radius: 30px;
+    padding: 1rem;
+}
+.desc_pet{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+}
+.desc_pet > *{
+    width: 50%;
+}
+
+.detalhes{
+    flex: none;
+    width: 80px;
+    box-sizing: content-box;
+    border-radius: 20px;
+    padding: .8rem 0px;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--txt_color);
+    text-align: center;
+}
+
+.titulo{
+    text-align: center;
+    font-size: 14px;
+    font-family: 'MontserratMedium';
+    font-weight: bold;
+}
+
+.valor{
+    text-align: center;
+    font-size: 16px;
+    font-family: 'MontserratMedium';
+    font-weight: lighter;
+    
+}
+
+.desc_pet > h2, .desc_pet > .preco{
+    color: var(--txt_color);
+    font-family: 'MontserratMedium';
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+.preco{
+    text-align: right;
+}
+.raca{
+    color: var(--txt_color);
+    font-family: 'MontserratMedium';
+}
+
+.dono{
+    display: flex;
+    padding: 0.5rem 1rem;
+}
+
+.desc_dono{
+    padding: 15px 10px 0px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nome, .localizacao{
+    color: var(--txt_color);
+    font-family: 'MontserratMedium';
+    font-size: 85%;
+}
+.nome{
+    font-size: 100%;
+}
+
+#take{
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.2rem;
+    height: 55px;
+    border-radius: 100px;
+    width: 88%;
+    min-width: 250px;
+    margin: 0px auto;
+    background-color: var(--bg_esc);
+    font-family: 'MontserratRegular';
+    font-weight: lighter;
+    margin-top: 30px;
+    transition: transform .5s;
+    cursor: pointer;
+}
+#take:hover{
+    transform: scale(1.05);
+}
+
+.back:hover{
+    transform: translateX(-10px);
+}

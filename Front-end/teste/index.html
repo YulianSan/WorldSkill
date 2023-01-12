@@ -8,18 +8,33 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <input type="checkbox" id="card_01" checked>
-    <label for="card_01">
-    <div class="cardWrapper">
-        <div class="cardRandom"></div>
+    <div class="drag" draggable="true" id="singed">
+        <span>
+            Arraste-me
+        </span>
     </div>
-    </label>
-    <input type="checkbox" id="card_02" checked>
-    <label for="card_02">
-    <div class="cardWrapper">
-        <div class="cardRandom"></div>
+    <div class="drop">
+        <div class="teste">
+            Solte aqui
+        </div>
     </div>
-    </label>
-    <a href="https://uxdesign.cc/creating-randomness-with-pure-css-a990dafcd569" target="_blank" class="linkElement">Read <i>"Creating randomness with pure CSS"</i></a>
 </body>
+<script>
+    const drop = document.getElementsByClassName('drop')[0];
+    const drag = document.getElementById('singed');
+
+    drag.addEventListener('dragstart', (e)=>{
+        console.log(e.target.id)
+        e.dataTransfer.setData('text', e.target.id);
+    });
+    drop.addEventListener('dragover', (e)=>{
+        e.preventDefault();
+    });
+    drop.addEventListener('drop', (e)=>{
+        e.stopPropagation();
+        e.preventDefault();
+        let data = (e.dataTransfer.getData('text'));
+        e.target.appendChild(document.getElementById(data))
+    });
+</script>
 </html>

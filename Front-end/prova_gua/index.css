@@ -16,6 +16,7 @@ body{
 
 #celular{
     display: flex;
+    position: relative;
     flex-direction: column;
     
     width: 414px;

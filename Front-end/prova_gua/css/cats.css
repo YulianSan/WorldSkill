@@ -14,7 +14,7 @@
     position: relative;
     width: 43%;
     height: 230px;
-    background-color: #519e8a;
+    background-color: #d1723f;
     border-radius: 35px;
     overflow: hidden;
 }
@@ -71,11 +71,9 @@
     background-image: url(../imgs/hearthome-active.svg);
 }
 
-.dog:hover .imagem{
-    background-color: white;
-}
+
 .dog:hover .dados{
-    background-color: #519e8a;
+    background-color: #d1723f;
     color: white;
 }
 
@@ -99,12 +97,21 @@
     width: 0px;
     height: 0px;
     border-radius: 50%;
-    background-color: #519e8a;
-    transition: width .3s, height .3s, background-color .5s .3s;
+    transition: width .5s, height .5s;
 }
 
 .dog:hover .imagem .animate{
     background-color: white;
     height: 250px;
     width: 250px;
+}
+
+.link.ativo{
+    background-color: #d1723f;
+
+    color: white;
+}
+
+#celular{
+    background-color: #e8dbd4;
 }

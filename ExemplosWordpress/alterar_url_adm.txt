@@ -1,0 +1,23 @@
+Primeiro você define a constante
+
+define('WP_ADMIN_DIR', 'url desejada');
+
+depois alterar a constante ADMIN_COOKIEPATH por
+
+define( 'ADMIN_COOKIE_PATH', SITECOOKIEPATH . 'url_desejada' );
+
+depois aplica um filtro em um plugin ou functions de um tema
+
+add_filter('site_url',  'wpadmin_filter', 10, 3);  
+
+function wpadmin_filter( $url, $path, $orig_scheme ) {  
+    $old  = array( "/(wp-admin)/");  
+    $admin_dir = WP_ADMIN_DIR;  
+    $new  = array($admin_dir);  
+    //Isso altera a url wp-admin
+    return preg_replace( $old, $new, $url, 1);  
+}
+
+depois adiciona no .htaccess isso
+
+RewriteRule ^url_desejada/(.*) wp-admin/$1?%{QUERY_STRING} [L]

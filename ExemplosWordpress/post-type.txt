@@ -1,0 +1,123 @@
+add_action( 'admin_enqueue_scripts', 'ssp_style_admin' );
+    add_action( 'admin_bar_menu', 'ssp_change_logo', 11);
+    add_action( 'login_enqueue_scripts', 'ssp_style_login');
+    add_action( 'admin_menu', 'ssp_add_page_perguntas' );
+    add_action( 'init', 'ssp_register_game_post_type');
+
+    add_shortcode('postgames', 'show_post_games');
+
+    function show_post_games(){
+        $args = array(
+            'post_type'=>'games'
+        );
+
+
+        $query = new WP_Query($args);
+
+        $content = '<ul>';
+
+        if($query->have_posts())
+            while($query->have_posts()){
+                $query->the_post();
+                $content .= '
+                    <li>
+                        <a href="'. post_permalink( ) . '" title="post '. get_the_title() .'">
+                        '. get_the_title() .'
+                        </a>
+                        <img class="img_post_game" src="'. get_the_post_thumbnail_url().'" width="200" alt="game">
+                        <p>'.get_post_meta(get_the_ID(),'desc', true).'</p>
+                    </li>
+                ';
+            }
+        else{
+            return 'Nenhum post games';
+        }
+
+        $content .= '</ul>';
+        echo $content;
+    }
+
+    
+    function ssp_register_game_post_type(){
+        add_theme_support( 'post-thumbnails' );
+
+        $labels = array(
+            'name' => _x( 'Games', 'post type general name' ),
+            'singular_name' => _x( 'Game', 'post type general name' ),
+            'add_new' => _x('Add New', 'Games'),
+            'add_new_item' => __('Add New Game'),
+            'edit_item' => __('Edit Game'),
+            'new_item' => __('New Game'),
+            'view_item' => __('View Game'),
+            'search_items' => __('Search Games'),
+            'not_found' =>  __('Nothing found'),
+            'not_found_in_trash' => __('Nothing found in Trash'),
+            'parent_item_colon' => ''
+        );
+
+        $args = array(
+            'labels'=>$labels,
+            'public' => true,
+            'publicly_queryable' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_in_nav_menus' => true,
+            'query_var' => true,
+            'rewrite' => array('slug','pages'),
+            'capability_type' => 'post',
+            'hierarchical' => true,
+            'menu_position' => 5,
+            'supports' => array('title','editor','thumbnail','excerpt','custom-fields')
+        );
+
+        register_post_type( 'games', $args );
+    }
+
+
+    add_action( 'add_meta_boxes_games', 'meta_box_for_games' );
+    
+    function meta_box_for_games( $post ){
+        add_meta_box( 'my_meta_box_custom_id', __( 'Metatags', 'textdomain' ), 'my_custom_meta_box_html_output', 'games', 'normal', 'high' );
+    }
+    
+    function my_custom_meta_box_html_output( $post ) {
+        wp_nonce_field( basename( __FILE__ ), 'my_custom_meta_box_nonce' ); //used later for security
+
+        ?>
+        <table class="form-table">
+            <tbody>
+                <tr>
+                    <th><label for="desc"><?php _e('Description: ', 'textdomain') ?></label></th>
+                    <td><textarea class="large-text code" name="desc" id="desc" cols="30" rows="10"  required><?php echo get_post_meta($post->ID, 'desc', true) ?></textarea></td>
+                </tr>
+                <tr>
+                    <th><label for="url"><?php _e('Url: ', 'textdomain') ?></label></th>
+                    <td><input class="regular-text" type="url" name="url" id="url" value="<?php echo get_post_meta($post->ID, 'url', true) ?>" required></td>
+                </tr>
+            </tbody>
+        </table>
+            
+        <?php
+    }
+    
+    add_action( 'save_post_games', 'team_member_save_meta_boxes_data', 10, 2 );
+    function team_member_save_meta_boxes_data( $post_id ){
+        // check for nonce to top xss
+        if ( !isset( $_POST['my_custom_meta_box_nonce'] ) || !wp_verify_nonce( $_POST['my_custom_meta_box_nonce'], basename( __FILE__ ) ) ){
+            return;
+        }
+    
+        // check for correct user capabilities - stop internal xss from customers
+        if ( ! current_user_can( 'edit_post', $post_id ) ){
+            return;
+        }
+    
+        // update fields
+        if ( isset( $_REQUEST['desc'] ) ) {
+            update_post_meta( $post_id, 'desc', sanitize_text_field( $_POST['desc'] ) );
+        }
+
+        if ( isset( $_REQUEST['url'] ) ) {
+            update_post_meta( $post_id, 'url', sanitize_text_field( $_POST['url'] ) );
+        }
+    }

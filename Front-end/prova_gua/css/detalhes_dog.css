@@ -1,0 +1,8 @@
+:root{
+    --bg: #cbe0db;
+    --txt_color: #2c4674;
+    --bg_esc: #519e8a;
+    --img: url(../imgs/karsten-big.png);
+    --b: -40px;
+    --h: 105%;
+}
