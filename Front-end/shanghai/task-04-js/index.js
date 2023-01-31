@@ -1,14 +1,14 @@
 const btn_render = document.getElementById('render');
 const txt = document.getElementById('texto');
-
+const marcacoes = [];
 btn_render.addEventListener('click', destacarTexto);
-
+let select;
 function destacarTexto(){
     
 
     if(!window.getSelection().anchorNode){ return }
 
-    let select = window.getSelection().getRangeAt(0);
+    select = window.getSelection().getRangeAt(0);
     let element = select.commonAncestorContainer;
     let v1 = select.endOffset;
     let v2 = select.startOffset;
@@ -20,7 +20,7 @@ function destacarTexto(){
     let Ntexto = element.textContent.split('');
     
     Ntexto.splice(inicio, fim, texto);
-    console.log(texto)
+    console.log(window.getSelection().focusNode.nodeValue)
 
     txt.innerHTML = txt.innerHTML.replace(element.textContent,  Ntexto.join(''));
 

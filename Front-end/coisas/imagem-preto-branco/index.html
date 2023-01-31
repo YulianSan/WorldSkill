@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem preto e branco</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <input type="file" id="inp_image">
+    <canvas id="canvas" width="0" height="0"></canvas>
+
+    <script>
+        const inp_image = document.getElementById('inp_image');
+        const canvas    = document.getElementById('canvas');
+        const ctx       = canvas.getContext('2d');
+
+        let imgCanvas = new Image();
+
+        inp_image.addEventListener('change', loadImage);
+
+        function loadImage(e){
+            let base64image = '';
+            let render = new FileReader();
+
+            render.onload = ()=>{
+                base64image = render.result;
+                imgCanvas.src = base64image;
+
+                imgCanvas.onload = ()=>{
+                    canvas.width = imgCanvas.naturalWidth;
+                    canvas.height = imgCanvas.naturalHeight;
+                    ctx.fillStyle = "#fff";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(imgCanvas, 0, 0, canvas.width, canvas.height);
+                    pretoBranco();
+
+                }
+            }
+            render.readAsDataURL(e.target.files[0]);
+
+        }
+
+        function pretoBranco(){
+            let paletaCor = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < canvas.height/2; i++) {
+                for (let j = 0; j < canvas.width/2; j++) {
+                    const r = paletaCor.data[(i * 4 * paletaCor.width) + ( j * 4     )];
+                    const g = paletaCor.data[(i * 4 * paletaCor.width) + ( j * 4 + 1 )];
+                    const b = paletaCor.data[(i * 4 * paletaCor.width) + ( j * 4 + 2 )];
+                    let rgbGray = (RGBtoGrayScale(r, g, b));
+                    ctx.fillStyle = `rgb(${rgbGray},${rgbGray},${rgbGray})`;
+                    ctx.fillRect(j, i, 1, 1);
+                }
+            }
+            console.log(paletaCor.width);
+        }
+
+        function RGBtoGrayScale(r, g, b){
+            return Math.round((Math.min(r, g, b) + Math.max(r, g, b)) / 2);
+        }
+    </script>
+</body>
+</html>

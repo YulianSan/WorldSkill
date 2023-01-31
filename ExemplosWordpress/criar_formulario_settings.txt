@@ -1,0 +1,85 @@
+<?php 
+/*
+    Plugin Name: Form Settings Single Post
+    Description: Um formulario que possibilita você personalizar como um single post sera exibido
+    Version: 1.0.0
+    Author: Yulian Santiago Almanza Almanza
+*/
+
+//hooks
+add_action('admin_menu', 'fst_add_page');
+add_action('admin_init', 'fst_register_settings');
+//adiciona uma página
+function fst_add_page(){
+    add_menu_page(
+        'Configurações Single Post',
+        'View Single Post',
+        'manage_options',
+        'fst_config',
+        'fst_show_page'
+    );
+}
+//formulario
+function fst_show_page(){
+    ?>
+        <div class="wrap">
+        <form method="post" action="options.php">
+            <?php 
+		//cria inputs defaults
+		settings_fields( 'fst-settings-group' ); 
+		//exibe os erros 
+                settings_errors('fst-settings-erros');
+	    ?>
+	    //pego a options salva
+            <?php $fst_options = get_option( 'fst_options' ); ?>
+            <table class="form-table">
+            <tr valign="top">
+            <th scope="row">Name</th>
+            <td><input type="text"
+	    //coloca o nome para pegar, sempre use o segundo parametro passado na função register_settings 
+            name="fst_options[option_name]"
+	    //mostra o valor, se for vazio mostra nd	
+            value="<?php echo esc_attr(
+            $fst_options['option_name'] ?? '' ); ?>" /></td>
+            </tr>
+            <tr valign="top">
+            <th scope="row">Email</th>
+            <td><input type="text"
+            name="fst_options[option_email]"
+            value="<?php echo esc_attr(
+            $fst_options['option_email'] ?? '' ); ?>" /></td>
+            </tr>  
+            <tr valign="top">
+            <th scope="row">URL</th>
+            <td><input type="text"
+            name="fst_options[option_url]"
+            value="<?php echo esc_url(
+            $fst_options['option_url'] ?? '' ); ?>" /></td>
+            </tr>
+            </table>  
+            <p class="submit">
+            <input type="submit" class="button-primary"
+            value="Save Changes" />
+            </p>  
+            </form>
+        </div>
+    <?php
+}
+
+function fst_register_settings(){
+    // registra a configuração
+    register_setting('fst-settings-group/*nome do grupo de configurações*/', 'fst_options'/*nome das opções*/, 'fst_sanitize_options'/*função para higienizar*/);
+}
+
+function fst_sanitize_options($input){
+    // vejo se o nome possue algum número
+    if(preg_match('/[0-9]/', $input['option_name'])){
+	// gero um erro
+        add_settings_error('fst-settings-erros','fst-settings-name-erros','Nome aceita apenas letras e espaços!','error');
+	//volto o valor para o padrão
+        $input['option_name'] = get_option('fst_options')['option_name'];
+    }
+    // retorno a entrada
+    return $input;
+}
+?>

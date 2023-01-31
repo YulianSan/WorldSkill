@@ -1,8 +1,3 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
 
 button{
     user-select: none;
@@ -13,6 +8,6 @@ button{
     color: red;
 }
 
-body *:not(#texto){
+body *:not(#texto, #texto *){
     user-select: none;
 }

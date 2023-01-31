@@ -1,0 +1,41 @@
+// criar uma pasta dentro do wp-admin com o nome que vc que para o subdiretorio
+// adicionar um index.php dentro dessa pasta
+// colocar esse conteúdo dentro dela
+// isso você pode pegar de outros arquivos dentro do wp-admin
+
+<?php
+/**
+ * User administration panel
+ *
+ * @package WordPress
+ * @subpackage Administration
+ * @since 1.0.0
+ */
+
+/** WordPress Administration Bootstrap */
+require_once '../admin.php';
+		
+
+require_once ABSPATH . 'wp-admin/admin-header.php';
+
+?>
+	<div class="wrap">
+		teste
+	</div>
+<?php
+
+require_once ABSPATH . 'wp-admin/admin-footer.php';
+
+
+
+?>
+
+// fim do conteúdo
+
+
+// depois para evitar erros editar o menu-header.php
+// adicionar admin_url() para todas as url
+
+//mudar o htaccess
+// vc pega o que está sendo passado pelo valor x
+RewriteRule ^wp-admin/subdiretorio/(.*)$ /pasta-wordpress/wp-admin/subdiretorio/index.php?x=$1 [L]

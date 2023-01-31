@@ -20,4 +20,4 @@ function wpadmin_filter( $url, $path, $orig_scheme ) {
 
 depois adiciona no .htaccess isso
 
-RewriteRule ^url_desejada/(.*) wp-admin/$1?%{QUERY_STRING} [L]
+RewriteRule ^url_desejada/(.*) (subdir se tiver)/wp-admin/$1?%{QUERY_STRING} [L]
