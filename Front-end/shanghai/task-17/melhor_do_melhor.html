@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor círculo já feito</title>
+</head>
+<style>
+    svg{
+        position: relative;
+        width: 150px;
+        aspect-ratio: 1;
+        z-index: 1000;
+    }
+    svg circle{
+        stroke: rgb(42, 177, 255);
+        fill: none;
+        stroke-width: 10;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+
+        stroke-dasharray: 440;
+        /* 90 deve ser a porcentagem */
+        --porcentagem: 90;
+        stroke-dashoffset: calc(440 - (440 * var(--porcentagem))/100);
+    }
+</style>
+<body>
+    <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+    </svg>
+    <span>90%</span>
+</body>
+</html>
