@@ -1,18 +1,49 @@
-ALTERAR O LOGO DO WORDPRESS NO MENU LATERAL
 
-HOOK -> add_action('admin_bar_menu', 'funcao', 11); //é preciso o 11 para que de certo
+add_action( 'after_setup_theme', 'e1_theme_support');
 
-TUDO ISSO DENTRO DA FUNÇÃO
+function e1_theme_support(){
+    add_theme_support( 'custom-logo', array(
+        'height'               => 100,
+        'width'                => 400,
+        'flex-height'          => true,
+        'flex-width'           => true,
+    ));
+}
 
-global $wp_admin_bar;
-$wp_admin_bar->add_menu( array(
-        'id'    => 'wp-logo',
-        'title' => '<img src="'.plugins_url( 'includes/ws_logo.png', __FILE__ ).'" alt="logo" />',
-        'href'  => __('https://ciclovivo.com.br/wp-content/uploads/2018/10/iStock-536613027.jpg'),
-        'meta'  => array(
-            'title' => __('Link Title'),
-        )
-) );
+add_action('wp_before_admin_bar_render', 'e1_change_logo');
+
+function e1_change_logo(){
+    if(!has_custom_logo()){ return; }
+    global $wp_admin_bar;
+
+    $wp_admin_bar->add_menu([
+        'id' => 'wp-logo',
+        'title' => '<img id="custom-logo" src="'.wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0].'"/>'
+    ]);
+}
+
+add_action('admin_enqueue_scripts', 'e1_load_style_admin');
+
+function e1_load_style_admin(){
+    wp_enqueue_style('e1_custom_logo', plugin_dir_url(__FILE__) . '/assets/css/admin_logo_style.css');
+}
+
+add_action('login_head', 'e1_login_header');
+function e1_login_header(){
+    ?>
+    <style>
+        .login h1 a{
+            background: url(<?php echo wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]?>);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            min-height: 150px;
+        }
+    </style>
+
+    <?php
+}
 
 --------------------------------------
 

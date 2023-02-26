@@ -1,0 +1,22 @@
+function get_user_navegador(){
+        $browser = $_SERVER['HTTP_USER_AGENT'];
+
+        if(str_contains($browser, "Edg")){
+            return "Edge";
+        }else if(str_contains($browser, 'Chrome')){
+            return "Chrome";
+        }else if(str_contains($browser, "Firefox")){
+            return "Firefox";
+        }
+
+        return "Outros navegadores";
+    }
+
+    function alimentar_estatisticas(){
+
+        global $wpdb;
+
+        if('http://'.$_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] == get_home_url(). '/'){
+            $wpdb->query("INSERT INTO {$wpdb->prefix}estatisticas_navegador(navegador) VALUES('".get_user_navegador()."')");
+        }
+    }
