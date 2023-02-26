@@ -1,0 +1,4 @@
+private sanitize: DomSanitizer
+
+
+this.getUrlFrame = this.sanitize.bypassSecurityTrustResourceUrl(res.body.gamePath + 'index.html');
