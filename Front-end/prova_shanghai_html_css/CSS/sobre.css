@@ -1,0 +1,54 @@
+#sobre .section__content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+}
+
+
+.sobre__text{
+    color: white;
+    font-size: 1.5rem;
+    flex: 1.5;
+}
+
+.sobre__logo{
+    flex: 1;
+    padding: 10px;
+    background-image: 
+        linear-gradient(135deg, 
+            var(--c-red) 12.5%,
+            var(--c-yellow) 12.5%, var(--c-yellow) 25%,
+            var(--c-green) 25%, var(--c-green) 37.5%,
+            var(--c-pink) 37.5%, var(--c-pink) 50%,
+            var(--c-red) 50%, var(--c-red) 62.5%,
+            var(--c-yellow) 62.5%, var(--c-yellow) 75%,
+            var(--c-green) 75%, var(--c-green) 87.5%,
+            var(--c-pink) 87.5%
+        );
+    background-size: 250% 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px -10px white;
+    animation: backgroun-slide 2s linear infinite;
+}
+
+@keyframes backgroun-slide {
+    0%{
+        background-position: 0% 0%;
+    }
+    100%{
+        background-position: 100% 0%;
+    }
+}
+.sobre__logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}

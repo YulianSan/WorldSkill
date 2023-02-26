@@ -1,0 +1,182 @@
+#perfil .section__content{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
+    color: white;
+}
+#perfil .section__content > p{
+    text-align: left;
+    max-width: 250px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.perfil{
+    border: 2px solid var(--c-red);
+    border-radius: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 5%;
+}
+
+.perfil__info, .grafico{
+    flex: 1;
+}
+
+.grafico{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.grafico__grafico{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;    
+}
+.perfil__info header{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.perfil__img{
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+}
+
+.perfil__name, .perfil__pontuacao{
+    color: white;
+    display: block;
+    margin-block: 1rem;
+}
+
+.perfil__name{
+    display: block;
+    font-size: 1.5rem;
+}
+.perfil__name::after{
+    content: 'nick';
+    color: red;
+    font-size: .9rem;
+    margin-inline: 1rem;
+}
+
+
+.perfil__jogo{
+    padding-bottom: .5em;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+#perfil h4{
+    font-size: 1.5rem;
+}
+.perfil__title{
+    display: block;
+    padding-bottom: .1em;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.grafico__pizza{
+    width: 200px;
+    height: 200px;
+    background-image: 
+        linear-gradient(var(--c-green) 50%, transparent 50%),
+        linear-gradient(-120deg, var(--c-pink) 50%, transparent 50%),
+        linear-gradient(60deg, var(--c-yellow) 50%, transparent 50%);
+    border-radius: 50%;
+    
+    animation: rodar 20s linear infinite;
+}
+
+@keyframes rodar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.data__info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-block: .5rem;
+}
+.data__color{
+    width: 1rem;
+    height: 1rem;
+}
+
+.data__info:nth-child(1) .data__color{
+    background-color: var(--c-green);
+}
+.data__info:nth-child(2) .data__color{
+    background-color: var(--c-yellow);
+}
+.data__info:nth-child(3) .data__color{
+    background-color: var(--c-pink);
+}
+.efeito{
+    width: 100px;
+    height: 100%;
+}
+
+.efeito{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.barra-vertical{
+    width: 1px;
+    height: 80%;
+    background-color: var(--c-red);
+}
+
+.barra-vertical:nth-child(1){
+    animation: expandir 4s -.5s linear alternate infinite;
+}
+.barra-vertical:nth-child(2){
+    animation: expandir 4s -1s linear alternate infinite;
+}
+.barra-vertical:nth-child(3){
+    animation: expandir 4s -1.5s linear alternate infinite;
+}
+.barra-vertical:nth-child(4){
+    animation: expandir 4s -2s linear alternate infinite;
+}
+.barra-vertical:nth-child(5){
+    animation: expandir 4s -2.5s linear alternate infinite;
+}
+.barra-vertical:nth-child(6){
+    animation: expandir 4s -3s linear alternate infinite;
+}
+.barra-vertical:nth-child(7){
+    animation: expandir 4s -3.5s linear alternate infinite;
+}
+.barra-vertical:nth-child(8){
+    animation: expandir 4s -4s linear alternate infinite;
+}
+
+@keyframes expandir {
+    0%{
+        height: 80%;
+    }
+
+    100%{
+        height: 10%;
+    }
+}

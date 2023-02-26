@@ -1,0 +1,87 @@
+ class San_List_Reservations extends WP_List_Table {
+        var $reservations;
+
+        public function __construct()
+        {
+            global $wpdb;
+
+            $query_str = $wpdb->prepare('SELECT * FROM reservations ORDER BY '.($_GET['orderby'] ??'id').' '.($_GET['order'] ?? ''), $_GET['orderby'] ?? 'id');
+            $this->reservations = $wpdb->get_results($query_str, ARRAY_A);
+            parent::__construct(array(
+                'singular' => 'Reserva',
+                'plural' => 'Reservas',
+            ));
+        }
+
+        public function get_columns()
+        {
+            $columns = array(
+                    'ip' => 'Ip da máquina',
+                    'nome' => 'Nome',
+                    'email' => 'E-mail',
+                    'confirmado' => 'Status'
+            );
+
+            return $columns;
+        }
+        public function no_items() {
+            echo 'Sem reservas pendentes.';
+        }
+
+        public function prepare_items()
+        {
+            $columns = $this->get_columns();
+            $hidden = array();
+            $sortable = $this->get_sortable_columns();
+
+            $this->_column_headers = array($columns, $hidden, $sortable);
+            $this->items = $this->reservations;
+        }
+
+        function get_sortable_columns()
+        {
+            $s_columns = array(
+                'nome'  => array('nome', true),
+                'email' => array('email', true),
+                'ip'   => array('ip', true)
+            );
+
+            return $s_columns;
+
+        }
+
+        public function column_default( $item, $column_name ) {
+            switch( $column_name ) {
+                case 'ip':
+                case 'email':
+                    return $item[ $column_name ];
+                    break;
+                case 'nome':
+                    return '<a href="'.admin_url("reservation/" . $item['id']).'">'.$item[ $column_name ].'</a>';
+                    break;
+                case 'confirmado':
+                    if($item['confirmado']){
+                        return 'Confirmado';
+                    }
+                    return 'Não Confirmado<br /><a class="button button-primary" href="'.admin_url().'admin-post.php?action=confirmar&id='.$item['id'].'"">Confirmar</a>';
+                default:
+                    return print_r( $item, true ) ; //Show the whole array for troubleshooting purposes
+            }
+        }
+    }
+
+    function san_page_show_reservations(){
+        $list_reservations = new San_List_Reservations();
+
+        ?>
+        <div class="wrap">
+            <h1><?php echo get_admin_page_title(); ?></h1>
+            <?php
+                $list_reservations->prepare_items();
+                $list_reservations->display();
+            ?>
+
+        </div>
+
+        <?php
+    }

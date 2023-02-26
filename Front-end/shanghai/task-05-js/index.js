@@ -4,10 +4,18 @@ const result  = document.getElementById('results');
 inp_color.addEventListener('change', getColors);
 
 function getColors(){
-    let rgb = /^rgb\(([0-2]{0,1}[0-5]{1,2},){2}[0-2]{0,1}[0-5]{1,2}\)$/;
+    let rgb = /^rgb\(([0-9]{1,3}),([0-9]{1,3}),([0-9]{1,3})\)$/;
     let hex = /^#([0-9a-f]){0,3}([0-9a-f]){3,3}$/;
 
-    if(rgb.test(this.value)) return isRGB(this.value);
+
+    if(rgb.test(this.value)) {
+        let [stringRBG, r, g, b] = this.value.match(rgb);
+
+        if(r >= 0 && r <= 255 && g >= 0 && g <= 255 && b >= 0 && b <= 255){
+            return isRGB(this.value);
+        }
+        return isInvalid();
+    }
     if(hex.test(this.value)) return isHex(this.value);
     else isInvalid();
 }
@@ -18,6 +26,7 @@ function isRGB(v) {
         return v != '';
     });
 
+    
     let hex = values.map( v =>{
         return Number(v).toString(16).padStart(2, '0');
     });
@@ -28,7 +37,7 @@ function isRGB(v) {
 }
 
 function isHex(v) {
-    let values = v.slice(1).split('');
+    let values = v.substring(1).split('');
     let rgb = [];
     for (let i = 0; i < 3; i++) {
         if(v.length > 4){

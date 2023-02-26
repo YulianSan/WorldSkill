@@ -28,6 +28,7 @@ function updateValues(){
     document.getElementById('max-value').textContent = `$ ${max_price.value}`;
 }
 function drawProgress(){
+    console.log(min_price.value)
     progress.style.left = `${100*(min_price.value/valueMax)}%`;
     progress.style.width = `${100*((max_price.value - min_price.value)/valueMax)}%`;
     updateValues();

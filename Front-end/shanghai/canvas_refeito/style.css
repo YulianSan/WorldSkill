@@ -1,0 +1,24 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+input{
+    padding-block: 2rem;
+}
+
+#show-color{
+    width: auto;
+    background-color: white;
+    color: black;
+    position: absolute;
+    padding: .8em 1em;
+    transform: translateY(-150%);
+}
+
+#canvas-lupa{
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    position: absolute;
+    transform: translateY(100%);
+}

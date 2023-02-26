@@ -1,0 +1,34 @@
+function hppp_customizer_settings($wp_customize) {
+        // Add header section
+        $wp_customize->add_section('header', array(
+            'title' => 'Header',
+            'priority' => 30,
+        ));
+    
+        // Add background color setting
+        $wp_customize->add_setting('header_bg_color', array(
+            'default' => '#008000',
+            'transport' => 'refresh',
+        ));
+    
+        // Add background color control
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_bg_color', array(
+            'label' => 'Cor de fundo',
+            'section' => 'header',
+            'settings' => 'header_bg_color',
+        )));
+    
+        // Add text color setting
+        $wp_customize->add_setting('header_text_color', array(
+            'default' => '#ffffff',
+            'transport' => 'refresh',
+        ));
+    
+        // Add text color control
+        $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'header_text_color', array(
+            'label' => 'Cor do texto',
+            'section' => 'header',
+            'settings' => 'header_text_color',
+        )));
+    }
+    add_action('customize_register', 'hppp_customizer_settings');

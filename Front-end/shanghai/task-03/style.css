@@ -12,15 +12,18 @@
 }
 #divImagem{
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: left;
     align-items: flex-start;
     gap: 2px;
+    height: 400px;
+    counter-reset: counter-images 0;
+    align-content: start;
 }
 #divImagem > div{
-    position: relative;
     width: 132px;
     height: 132px;
     border-radius: 10px;
@@ -33,10 +36,13 @@
     object-fit: contain;
 }
 #divImagem > div:nth-child(n + 10){
-    display: none;
+    counter-increment: counter-images 1;
 }
-#divImagem > div:nth-child(9)::after{
-    content: var(--i);
+#divImagem > div:last-child{
+    display: block;
+}
+#divImagem > div:nth-child(n + 10):last-of-type::after{
+    content: '+ 'counter(counter-images, decimal);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -44,10 +50,11 @@
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
+    bottom: 0px;
+    right: 0px;
+    width: 132px;
+    height: 132px;
+    border-radius: 10px;
     background-color: #00000099;
     visibility: visible;
 }

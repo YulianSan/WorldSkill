@@ -1,0 +1,16 @@
+add_action('network_admin_menu', 'nm_add_page_news');
+
+function nm_get_post_site($site_id){
+
+        $result = file_get_contents(get_rest_url($site_id, 'wp/v2/posts?_fields=id,author&'. ($_GET && !empty($_GET['search']) ? 'search='.urlencode($_GET['search']) : 'per_page=12')));
+
+
+        switch_to_blog($site_id);
+
+        $count_posts = preg_replace('/[^0-9]/', '', $http_response_header[9]);
+        echo "<div style='border-radius: 10%; margin: 1rem; padding: 10px; width: max-content;border:10px solid #0a4b78;text-align: center;display: inline-block;color:#0c0c0c;'>
+                    $count_posts<br />
+                    ".get_bloginfo('name')."
+                </div>";
+        return json_decode($result, true);
+}

@@ -18,12 +18,7 @@ function showColor(){
     if(!isMouseEnter){
         return;
     }
-    // if(isMouseMove) {
-    //     isMouseMove=false;
-    //     return;
-    // }
-    
-    removePop();
+    // removePop();
     const imageData = ctx.getImageData(
         lastPosition.x, 
         lastPosition.y, 
@@ -32,10 +27,15 @@ function showColor(){
 
     const colorRGB = `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`;
 
-    const elementShowColor = document.createElement('div');
-    elementShowColor.classList.add('mostraCor');
-    elementShowColor.style.left = lastPosition.pageX + 'px';
-    elementShowColor.style.top = lastPosition.pageY + 'px';
+    let elementShowColor = document.getElementsByClassName('mostraCor')[0];
+    if(!elementShowColor){
+        elementShowColor = document.createElement('div');
+        elementShowColor.classList.add('mostraCor');
+
+    }
+
+    elementShowColor.style.left = lastPosition.x + 'px';
+    elementShowColor.style.top = lastPosition.y + 'px';
     elementShowColor.textContent = colorRGB;
 
     base_canvas.appendChild(elementShowColor);
@@ -44,14 +44,12 @@ function showColor(){
 
 }
 function mouseMove(e){
-    // removePop();
     isMouseMove = true;
     if(isMouseEnter){
+        console.log(e);
         lastPosition = {
             x: e.pageX - canvas.offsetLeft,
             y: e.pageY - canvas.offsetTop,
-            pageX: e.pageX,
-            pageY: e.pageY
         }
         createLupa();
         showColor();
@@ -103,7 +101,7 @@ function createLupa(){
     lupa_ctx.fillRect(0, 0, lupa_canvas.width, lupa_canvas.height);
     
     lupa_canvas.style.left = lastPosition.x + 'px';
-    lupa_canvas.style.top = lastPosition.y + 50 + 'px';
+    lupa_canvas.style.top = lastPosition.y + 'px';
     
     lupa_ctx.drawImage(
         img, 
@@ -119,14 +117,14 @@ function createLupa(){
         //desenhar um contorno para cada pixel
     for (let i = 1; i <= zoom; i++) {
             lupa_ctx.strokeStyle = '#cccccccc';
-        lupa_ctx.beginPath();
-        lupa_ctx.moveTo(i * zoom, 0);
-        lupa_ctx.lineTo(i * zoom, tamanho);
-        lupa_ctx.stroke();
-        
-        lupa_ctx.beginPath();
-        lupa_ctx.moveTo(0, i * zoom);
-        lupa_ctx.lineTo(tamanho, i * zoom);
+            lupa_ctx.beginPath();
+                lupa_ctx.moveTo(i * zoom, 0);
+                lupa_ctx.lineTo(i * zoom, tamanho);
+            lupa_ctx.stroke();
+                
+            lupa_ctx.beginPath();
+                lupa_ctx.moveTo(0, i * zoom);
+                lupa_ctx.lineTo(tamanho, i * zoom);
             lupa_ctx.stroke();
     }
     

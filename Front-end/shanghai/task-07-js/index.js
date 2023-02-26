@@ -10,7 +10,9 @@ function trilha(e){
     let bolha = {
         x: e.clientX,
         y: e.clientY,
-        size: 1,
+        velX: Math.floor(Math.random() * 8) - 4,
+        velY: Math.floor(Math.random() * 8) - 4,
+        size: Math.floor(Math.random() * 40),
         scale: 1,
         color: colors[Math.floor(Math.random()*colors.length)]
     }
@@ -25,13 +27,18 @@ function animarTrila(){
     for (let i = 0; i < bolhas.length; i++) {
         const e = bolhas[i];
         
-        e.scale += .1;
+        e.scale -= .03;
 
-        if(e.scale > 5) {
+
+        if(e.scale <= 0) {
             bolhas.shift();
             continue;
         }
+
+        e.x += e.velX;
+        e.y += e.velY;
     
+        
         ctx.fillStyle = e.color;
         ctx.beginPath();
         ctx.arc(e.x, e.y, e.size * e.scale, 0, 2 * Math.PI);

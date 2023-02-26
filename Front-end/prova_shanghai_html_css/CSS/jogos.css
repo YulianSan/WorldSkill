@@ -1,0 +1,68 @@
+#jogos .section__content{
+    text-align: center;
+}
+.jogos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+    text-align: left;
+}
+
+.jogo{
+    height: 300px;
+    min-height: 150px;
+    width: 48%;
+    border-radius: 15px;
+    background: url(../IMG/artur-shamsutdinov-GmTxsWc0U18-unsplash.jpg) center center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.jogo__content{
+    width: 100%;
+    height: max-content;
+    padding: 1rem 2rem;
+    background-color: #fda543;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jogo__content p{
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .3s linear;
+}
+
+.jogo__content h3{
+    margin-block: 17px;
+}
+
+.jogo:hover .jogo__content p{
+    max-height: 400px;
+}
+
+.jogo__btn{
+    margin: 0px auto;
+    padding: 1.2em 2.5em 1.4em 2.5rem;
+    background-color: var(--primary);
+    border: 3px solid #fda543;
+    color: white;
+    border-radius: .8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 3rem;
+    transition: background-color .2s, color .2s, transform .2s;
+}
+
+.jogo__btn:hover{
+    color: var(--primary);
+    background-color: #fda543;
+    transform: scale(1.1);
+}

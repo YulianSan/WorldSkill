@@ -3,9 +3,9 @@ let data_atual = new Date();
 let data_old = new Date();
 setInterval(
     ()=>{
-        data_atual.setSeconds(data_atual.getSeconds()+1);
+        data_atual = new Date();
         desenharNumero();
-        data_old.setSeconds(data_old.getSeconds()+1);
+        data_old =  new Date();
     },1000
 )
 const pontos = [
@@ -159,7 +159,7 @@ function animationNumber(e, o){
         e.style.animation = "none";
         setTimeout(()=>{
             e.style.animation = "animationTransition .5s linear";
-        }, 10);
+        }, 0);
     }
 }
 // ir: inicio, i: inicio linha, f: fim

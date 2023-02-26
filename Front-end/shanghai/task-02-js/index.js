@@ -8,8 +8,8 @@ imgs_holofotes.forEach( v => {
     })
 
     v.addEventListener('mousemove', function(e) {
-        const x = e.clientX - this.offsetLeft;
-        const y = e.clientY - this.offsetTop;
+        const x = e.pageX - this.offsetLeft;
+        const y = e.pageY - this.offsetTop;
         
         v.children[0].style.left = x - (v.children[0].clientWidth/2) + 'px';
         v.children[0].style.top = y - (v.children[0].clientWidth/2) + 'px';

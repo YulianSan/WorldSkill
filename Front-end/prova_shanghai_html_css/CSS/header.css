@@ -1,0 +1,29 @@
+body{
+    padding-top: 150px;
+}
+.header-top{
+    height: 150px;
+    width: 100%;
+    border-bottom: 5px solid white;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 10000;
+    background-color: var(--primary);
+}
+
+.header-top__container{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0px auto;
+    z-index: 1000;
+}
+
+.header-top__logo{
+    width: auto;
+    height: 100px;
+}

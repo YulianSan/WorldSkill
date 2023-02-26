@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    height: 100px;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 5px solid white;
+}
+
+.footer > *{
+    flex: 1;
+    text-align: center;
+}
+
+.footer > *:not(:last-child){
+    border-right: 1px solid gray;
+}

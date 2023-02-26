@@ -48,7 +48,7 @@ body{
     z-index: -1;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-100%);
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -58,18 +58,18 @@ body{
     animation: nascer 10s linear infinite;
 }
 
-@keyframes mudarEstrela {
-    
-}
 
 @keyframes nascer {
     from{
         box-shadow: 0px 0px 10px white;
+        top: 0px;
         
     }
     to{
-        bottom: 100%;
+        top: 100%;
+        left: 30%;
         box-shadow: 0px 0px 100px 10px white;
+        transform: translateX(-50%) translateY(100%);
     }
 }
 .n1{

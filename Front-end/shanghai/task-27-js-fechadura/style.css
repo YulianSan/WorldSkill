@@ -16,12 +16,21 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 250px;
-    padding: 30px 20px 100px 20px;
+    width: 260px;
+    padding: 100px 20px 200px 20px;
     height: auto;
-    background-color: black;
+    background: repeating-linear-gradient(
+        90deg,
+        rgb(31, 31, 31),
+        rgb(31, 31, 31) 2px,
+        black 2px,
+        black 3px
+    );
     border-radius: 30px;
     gap: 10px;
+    border: 10px solid rgb(31, 31, 31);
+    border-top: 20px solid rgb(212, 212, 212);
+    border-bottom: 10px solid rgb(14, 14, 14);
 }
 
 .botao{
@@ -34,6 +43,7 @@ body{
     font-size: 30px;
     cursor: pointer;
     transition: all .2s linear;
+    font-weight: bold;
 }
 .botao.click{
     box-shadow: 0px 0px 10px white;

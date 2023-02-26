@@ -1,0 +1,181 @@
+
+#features .section__content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 40px 500px;
+}
+.nav-features{
+    display: flex;
+    gap: 16px;
+}
+
+.nav-features > *{
+    flex: 1;
+}
+
+.features__button{
+    border: 4px solid var(--color);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: var(--color);
+    border-bottom: none;
+    text-align: center;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: font-size .2s;
+}
+
+.features__button:hover{
+    font-size: 1.5em;
+}
+.features__button:nth-child(1){
+    --color: var(--c-yellow);
+}
+.features__button:nth-child(2){
+    --color: var(--c-green);
+}
+.features__button:nth-child(3){
+    --color: var(--c-red);
+}
+.features__button:nth-child(4){
+    --color: var(--c-pink);
+}
+
+.features__button_text{
+    display: inline-block;
+    overflow: hidden;
+}
+
+label[for="features_jogos"] .features__button_text{
+    --l: 5;
+}
+
+label[for="features_rank"] .features__button_text{
+    --l: 8;
+}
+
+label[for="features_perfil"] .features__button_text{
+    --l: 6;
+}
+
+label[for="features_versao"] .features__button_text{
+    --l: 7;
+}
+#features_jogos:checked ~ #features .features_jogos, #features_jogos:checked ~ #features .imgs-features{
+    background-color: var(--c-yellow);
+}
+#features_rank:checked ~ #features .features_rank, #features_rank:checked ~ #features .imgs-features{
+    background-color: var(--c-green);
+}
+#features_perfil:checked ~ #features .features_perfil, #features_perfil:checked ~ #features .imgs-features{
+    background-color: var(--c-red);
+}
+#features_versao:checked ~ #features .features_versao, #features_versao:checked ~ #features .imgs-features{
+    background-color: var(--c-pink);
+}
+
+
+#features_jogos:checked ~ #features label[for="features_jogos"] .features__button_text{
+    animation: type_text .2s steps(var(--l), end);
+}
+
+#features_rank:checked ~ #features label[for="features_rank"] .features__button_text{
+    animation: type_text .2s steps(var(--l), end);
+}
+
+#features_perfil:checked ~ #features label[for="features_perfil"] .features__button_text{
+    animation: type_text .2s steps(var(--l), end);
+}
+#features_versao:checked ~ #features label[for="features_versao"] .features__button_text{
+    animation: type_text .2s steps(var(--l), end);
+}
+
+@keyframes type_text {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: calc(var(--l) * .6rem);
+    }
+}
+
+#features_jogos:checked ~ #features label[for="features_jogos"]{
+    background-color: var(--color);
+    color: black;
+}
+#features_rank:checked ~ #features label[for="features_rank"]{
+    background-color: var(--color);
+    color: black;
+}
+#features_perfil:checked ~ #features label[for="features_perfil"]{
+    background-color: var(--color);
+    color: black;
+}
+#features_versao:checked ~ #features label[for="features_versao"]{
+    background-color: var(--color);
+    color: black;
+}
+
+.imgs-features{
+    grid-row: 2/3;
+    background-color: red;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.imgs-features > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateX(100%);
+    position: absolute;
+    transition: transform .2s linear;
+}
+.text-features{
+    grid-row: 2/3;
+    background-color: blue;
+    border-bottom-left-radius: 30px;
+    overflow: hidden;
+}
+
+.text-features > div{
+    display: none;
+    height: 100%;
+    align-content: center;
+    text-align: left;
+    padding-inline: 2rem;
+}
+
+.text-features > div h3{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+#features_jogos:checked ~ #features .features_jogos{
+    display: grid;
+}
+#features_rank:checked ~ #features .features_rank{
+    display: grid;
+}
+#features_perfil:checked ~ #features .features_perfil{
+    display: grid;
+}
+#features_versao:checked ~ #features .features_versao{
+    display: grid;
+}
+
+#features_jogos:checked ~ #features .imgs-features__img-jogos{
+    transform: translateX(0px);
+}
+#features_rank:checked ~ #features .imgs-features__img-rank{
+    transform: translateX(0px);
+}
+#features_perfil:checked ~ #features .imgs-features__img-perfil{
+    transform: translateX(0px);
+}
+#features_versao:checked ~ #features .imgs-features__img-versao{
+    transform: translateX(0px);
+}

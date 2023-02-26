@@ -6,10 +6,11 @@ btn_search.addEventListener('click', clickBtnSearch);
 
 function clickBtnSearch(){
     let value = inp_search.value;
-    if(/\W/.test(value)) {return}
+
     let txt = text.textContent;
     let regExp = new RegExp(`(${value})`, 'g');
     let criarDestaque = (t)=>{
+        console.log(t);
         let r = Math.floor(Math.random()*255), 
             g = Math.floor(Math.random()*255), 
             b = Math.floor(Math.random()*255);

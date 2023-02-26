@@ -1,0 +1,23 @@
+.section{
+    margin: 3rem auto;
+    max-width: 1200px;
+}
+
+.section__title{
+    color: white;
+    font-size: 3rem;
+    position: relative;
+}
+
+.section__title::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(90deg, white, transparent 80%);
+}
+
+.section__content{
+    margin-block: 3rem;
+}

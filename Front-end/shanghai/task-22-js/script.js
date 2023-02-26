@@ -22,6 +22,7 @@ document.addEventListener("dragend", (e) => {
 
 columns.forEach((item) => {
   item.addEventListener("dragover", (e) => {
+    e.preventDefault();
     const dragging = document.querySelector(".dragging");
     const applyAfter = getNewPosition(item, e.clientY);
 
@@ -43,6 +44,8 @@ function getNewPosition(column, posY) {
 
     if (posY >= boxCenterY) {
         result = refer_card;
+    }else{
+      break;
     }
     
   }
