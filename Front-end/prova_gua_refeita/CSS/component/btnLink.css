@@ -1,0 +1,16 @@
+.btn-link{
+    padding-block: .8rem;
+    border-radius: 100px;
+    position: relative;
+    transition: transform .3s;
+}
+
+.btn-link img{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.btn-link:hover{
+    transform: scale(1.1);
+}

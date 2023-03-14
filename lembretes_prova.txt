@@ -1,0 +1,4 @@
+1 - comentar enquanto faz
+2 - pensar antes de fazer
+3 - fazer o básico de tudo
+4 - fazer código reutilizável

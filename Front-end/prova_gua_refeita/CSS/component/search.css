@@ -1,0 +1,15 @@
+.search{
+    padding-inline: .9rem;
+    padding-block: .7rem;
+    gap: 10px;
+
+    border-radius: 50px;
+    align-items: center;
+}
+
+.search__inp{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 30px;
+}

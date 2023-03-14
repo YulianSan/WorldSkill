@@ -1,0 +1,128 @@
+.perfil{
+    border: 1px solid var(--red);
+    padding: 1rem;
+    border-radius: 1rem;
+    justify-content: space-between;
+}
+
+.perfil *{
+    flex: none;
+}
+
+
+#perfil .section-content{
+    gap: 50px;
+}
+.p-perfil{
+    max-width: 250px;
+}
+.header-perfil{
+    gap: 20px;
+}
+.header-perfil h3{
+    font-size: 1.5rem;
+}
+
+.red{
+    color: var(--red);
+}
+.img-perfil{
+    max-width: 120px;
+    height: clamp(120px, 120px, 120px);
+    border-radius: 50%;
+    object-fit: cover;
+}
+.perfil-rank{
+    width: max-content;
+}
+.perfil-rank h4{
+    font-size: 1.2rem;
+    border-bottom: 1px solid white;
+}
+
+.perfil-rank div{
+    font-size: 1.2rem;
+    line-height: normal;
+    margin-block: .5rem;
+}
+.animation-perfil{
+    gap:10px;
+}
+
+@keyframes animation-perfil {
+    0%{
+        height: 0%;
+    }
+
+    100%{
+        height: 100%;
+    }
+}
+.animation-barra{
+    flex: none;
+    height: 80%;
+    width: 1px;
+    background-color: var(--red);
+}
+
+.animation-barra:nth-child(1){
+    animation: animation-perfil 1s -.1s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(2){
+    animation: animation-perfil 1s -.2s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(3){
+    animation: animation-perfil 1s -.3s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(4){
+    animation: animation-perfil 1s -.4s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(5){
+    animation: animation-perfil 1s -.5s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(6){
+    animation: animation-perfil 1s -.6s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(7){
+    animation: animation-perfil 1s -.7s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.animation-barra:nth-child(8){
+    animation: animation-perfil 1s -.8s cubic-bezier(1, 0, 0, 1) alternate infinite;
+}
+.conteiner-grafico{
+    gap: 20px;
+}
+.grafico-perfil{
+    text-align: center;
+    gap: 20px;
+}
+.grafico{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: conic-gradient(var(--yellow) 25%, var(--pink) 25%, var(--pink) 50%, var(--green) 50%);
+    animation: rodar .01ms linear infinite;
+}
+
+.desc-color{
+    width: 15px;
+    aspect-ratio: 1;
+    background-color: red;
+}
+
+.group-desc{
+    gap: 10px;
+}
+
+.desc-grafico{
+    justify-content: center;
+}
+
+@keyframes rodar {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

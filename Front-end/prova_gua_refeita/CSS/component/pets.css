@@ -1,0 +1,119 @@
+.pets{
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pet{
+    width: 45%;
+    height: 230px;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .5s .1s;
+    text-align: center;
+}
+
+.pet:hover{
+    background-color: var(--text-white);
+}
+
+.pet__desc{
+    position: absolute;
+    bottom: 0px;
+    background-color: var(--text-white);
+    width: 100%;
+    height: 35%;
+    padding-inline: 20px;
+    padding-block: 5px;
+    box-sizing: border-box;
+    text-align: left;
+    
+    transition: all .5s;
+}
+
+.pet:hover .pet__desc{
+    background-color: var(--bg-dog-contrast);
+}
+.pet:hover .pet__desc *{
+    color: var(--text-white);
+}
+
+.favorito{
+    width: 30px;
+    height: 30px;
+    background: url(../../images/search/hearthome.svg) center no-repeat;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.pet > img{
+    position: relative;
+    top: 30px;
+    opacity: 1;
+    transition: all .5s .3s;
+}
+
+.pet:hover > img{
+    top: 20px;
+}
+
+.efeito{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 50px;
+    aspect-ratio: 1;
+    border: 100px solid var(--bg-dog);
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0s;
+    opacity: 0;
+}
+
+.pet:hover .efeito{
+    width: 300%;
+    transition: width .3s;
+    opacity: 1;
+}
+#pet1:checked ~ .pets .pet:nth-child(1) .favorito{
+    background: url(../../images/search/hearthome-active.svg) center no-repeat;
+}
+#pet2:checked ~ .pets .pet:nth-child(2) .favorito{
+    background: url(../../images/search/hearthome-active.svg) center no-repeat;
+}
+#pet3:checked ~ .pets .pet:nth-child(3) .favorito{
+    background: url(../../images/search/hearthome-active.svg) center no-repeat;
+}
+#pet4:checked ~ .pets .pet:nth-child(4) .favorito{
+    background: url(../../images/search/hearthome-active.svg) center no-repeat;
+}
+
+.pets .pet:nth-child(1):hover .favorito{
+    background: url(../../images/search/hearthome-white.svg) center no-repeat;
+}
+.pets .pet:nth-child(2):hover .favorito{
+    background: url(../../images/search/hearthome-white.svg) center no-repeat;
+}
+.pets .pet:nth-child(3):hover .favorito{
+    background: url(../../images/search/hearthome-white.svg) center no-repeat;
+}
+.pets .pet:nth-child(4):hover .favorito{
+    background: url(../../images/search/hearthome-white.svg) center no-repeat;
+}
+
+#pet1:checked ~ .pets .pet:nth-child(1):hover .favorito{
+    background: url(../../images/search/hearthome-white-active.svg) center no-repeat;
+}
+#pet2:checked ~ .pets .pet:nth-child(2):hover .favorito{
+    background: url(../../images/search/hearthome-white-active.svg) center no-repeat;
+}
+#pet3:checked ~ .pets .pet:nth-child(3):hover .favorito{
+    background: url(../../images/search/hearthome-white-active.svg) center no-repeat;
+}
+#pet4:checked ~ .pets .pet:nth-child(4):hover .favorito{
+    background: url(../../images/search/hearthome-white-active.svg) center no-repeat;
+}

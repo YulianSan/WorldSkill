@@ -1,0 +1,15 @@
+.footer{
+    justify-content: space-around;
+    padding-block: 2rem;
+    border-top: 3px solid white;
+}
+.footer__item{
+    min-height: 40px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.footer__item:not(:last-child){
+    border-right: 2px solid white;
+}

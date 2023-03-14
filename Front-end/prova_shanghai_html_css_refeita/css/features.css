@@ -1,0 +1,193 @@
+#features .section-content{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.desc-features{
+    overflow: hidden;
+    position: relative;
+    grid-column: 1/3;
+    grid-row: 2/3;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.desc-feature{
+    padding: 6rem 2rem;
+    display: none;
+}
+
+.desc-features :is(.desc-feature), .desc-features :is(p,h3){
+    color: inherit;
+}
+
+.desc-features h3{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+.desc-features p{
+    text-align: justify;
+    font-size: 1.28rem;
+}
+
+.imgs{
+    position: absolute;
+    width: 30%;
+    top: 0px;
+    right: 0px;
+}
+
+.imgs img{
+    transform: translateX(100%);
+    transition: all .4s linear;
+    position: absolute;
+    z-index: 1;
+}
+
+.controles{
+    gap: 20px;
+}
+
+.controle-features{
+    flex: none;
+    width: 20%;
+    height: 42px;
+    padding: .5rem;
+    text-align: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: font-size .1s;
+    position: relative;
+}
+.controle-features span{
+    position: absolute;
+    color: inherit;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.controle-features:hover{
+    font-size: 1.4rem;
+}
+.controle-features:nth-child(1){
+    --l: 5;
+    border: 3px solid var(--yellow);
+    background-color: var(--bg);
+    color: var(--yellow);
+    border-bottom: none;
+}
+
+.controle-features:nth-child(2){
+    --l: 8;
+    border: 3px solid var(--green);
+    background-color: var(--bg);
+    color: var(--green);
+    border-bottom: none;
+}
+.controle-features:nth-child(3){
+    --l: 6;
+    border: 3px solid var(--red);
+    background-color: var(--bg);
+    color: var(--red);
+    border-bottom: none;
+}
+.controle-features:nth-child(4){
+    --l: 7;
+    border: 3px solid var(--pink);
+    background-color: var(--bg);
+    color: var(--pink);
+    border-bottom: none;
+}
+
+@keyframes escrever {
+    0%{
+        width: 0px;
+    }
+
+    100%{
+        width: 76px;
+    }
+}
+
+#feature-1:checked ~ .controles .controle-features:nth-child(1), #feature-1:checked ~ .desc-features{
+    background-color: var(--yellow);
+    color: var(--bg);
+    
+}
+#feature-2:checked ~ .controles .controle-features:nth-child(2), #feature-2:checked ~ .desc-features{
+    background-color: var(--green);
+    color: var(--bg);
+    
+}
+#feature-3:checked ~ .controles .controle-features:nth-child(3), #feature-3:checked ~ .desc-features{
+    background-color: var(--red);
+    color: var(--bg);
+    
+}
+#feature-4:checked ~ .controles .controle-features:nth-child(4), #feature-4:checked ~ .desc-features{
+    background-color: var(--pink);
+    color: var(--bg);
+}
+
+
+#feature-1:checked ~ .controles .controle-features:nth-child(1) span{
+    animation: escrever calc(var(--l) * .05s) steps(var(--l), jump-none);
+    
+}
+#feature-2:checked ~ .controles .controle-features:nth-child(2) span{
+    animation: escrever calc(var(--l) * .05s) steps(var(--l), jump-none);
+    
+}
+#feature-3:checked ~ .controles .controle-features:nth-child(3) span{
+    animation: escrever calc(var(--l) * .05s) steps(var(--l), jump-none);
+    
+}
+#feature-4:checked ~ .controles .controle-features:nth-child(4) span{
+    animation: escrever calc(var(--l) * .05s) steps(var(--l), jump-none);
+}
+
+
+
+#feature-1:checked ~ .desc-features .desc-feature:nth-child(1){
+    display: block;
+    
+}
+#feature-2:checked ~ .desc-features .desc-feature:nth-child(2){
+    display: block;
+    
+}
+#feature-3:checked ~ .desc-features .desc-feature:nth-child(3){
+    display: block;
+    
+}
+#feature-4:checked ~ .desc-features .desc-feature:nth-child(4){
+    display: block;
+}
+
+
+
+#feature-1:checked ~ .desc-features .imgs img:nth-child(1){
+    z-index: 3;
+    transform: translateX(0px);
+    
+}
+#feature-2:checked ~ .desc-features .imgs img:nth-child(2){
+    z-index: 3;
+    transform: translateX(0px);
+    
+}
+#feature-3:checked ~ .desc-features .imgs img:nth-child(3){
+    z-index: 3;
+    transform: translateX(0px);
+    
+}
+#feature-4:checked ~ .desc-features .imgs img:nth-child(4){
+    z-index: 3;
+    transform: translateX(0px);
+}

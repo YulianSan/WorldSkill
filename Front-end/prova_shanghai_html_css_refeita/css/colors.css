@@ -1,0 +1,24 @@
+:root{
+    --bg: #13141a;
+    --red: #fb3640;
+    --yellow: #fda543;
+    --green: #17c69b;
+    --pink: #fa2f75;
+    --text: white;
+}
+
+body #thee:checked ~ *{
+    --bg:white;
+    --text: black;
+    text-shadow: 0px 0px 50px white;
+}
+
+body #thee:checked ~ img, body #thee:checked ~ * img{
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+
+
+body:has(#thee:checked){
+    background-color: white;
+}

@@ -1,0 +1,21 @@
+.btn-back{
+    display: inline-block;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    
+    background-image: url(../../images/search/chevron-left.svg);
+
+    background-size: contain;
+    width: 45px;
+    aspect-ratio: 1;
+    transition: left .3s;
+}
+
+.btn-back:hover{
+    left: 10px;
+}
+
+.btn-back.img-white{
+    background-image: url(../../images/preview/chevron-left-white.svg);
+}

@@ -1,0 +1,24 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-weight: lighter;
+}
+
+body{
+    display: grid;
+    place-items: center;
+}
+
+label{
+    cursor: pointer;
+    display: block;
+}
+
+input[type = 'checkbox'], input[type = 'radio']{
+    display: none;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+}

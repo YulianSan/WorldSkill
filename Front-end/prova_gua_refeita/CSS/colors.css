@@ -1,0 +1,14 @@
+:root{
+    --text-primary: #2c4674;
+    --text-white: #ffffff;
+    
+    --bg-home: linear-gradient(-30deg, var(--text-primary), #c8daff);
+    
+    --bg-cat: #e8dbd4;
+    --bg-cat-contrast: #d1723f;
+    --bg-cat-light: #f6f1ee;
+
+    --bg-dog: #cbe0db;
+    --bg-dog-contrast: #519e8a;
+    --bg-dog-light: #eaf3f1;
+}

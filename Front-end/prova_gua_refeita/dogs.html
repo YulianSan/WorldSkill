@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- STYLE DEFAULT -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/colors.css">
+    <link rel="stylesheet" href="CSS/fonts.css">
+    <link rel="stylesheet" href="CSS/fontsSize.css">
+    <link rel="stylesheet" href="CSS/text.css">
+    <link rel="stylesheet" href="CSS/celular.css">
+    <link rel="stylesheet" href="CSS/background.css">
+    <link rel="stylesheet" href="CSS/displays.css">
+    <!-- END STYLE DEFAULT -->
+
+    <!-- STYLE COMPONENTS -->
+    <link rel="stylesheet" href="CSS/component/btnBack.css">
+    <link rel="stylesheet" href="CSS/component/menu.css">
+    <link rel="stylesheet" href="CSS/component/title.css">
+    <link rel="stylesheet" href="CSS/component/search.css">
+    <link rel="stylesheet" href="CSS/component/nav.css">
+    <link rel="stylesheet" href="CSS/component/btnLink.css">
+    <link rel="stylesheet" href="CSS/component/pets.css">
+    <!-- END STYLE COMPONENTS -->
+
+    <link rel="stylesheet" href="CSS/pages/dogs.css">
+</head>
+
+<body>
+    <div class="celular dog-primary">
+        <!-- CHECKBOX PETS -->
+        <input type="checkbox" name="pet1" id="pet1">
+        <input type="checkbox" name="pet2" id="pet2">
+        <input type="checkbox" name="pet3" id="pet3">
+        <input type="checkbox" name="pet4" id="pet4">
+        <!-- END CHECKBOX PETS -->
+        <input type="checkbox" name="menu" id="menu">
+
+        <header class="header-dog">
+            <a href="index.html" class="btn-back"></a>
+            <h1 class="fa-center ff-mediu fc-primary fs-g">Search</h1>
+        </header>
+        <label for="menu" class="btn-menu"></label>
+        <div class="search flex-row dog-light">
+            <label for="inp_search">
+                <img src="images/search/search.svg" alt="search">
+            </label>
+            <input type="text" class="search__inp fc-primary ff-regular fs-m" id="inp_search">
+        </div>
+        
+        <div class="menu">
+            <h2 class="fa-center ff-mediu fc-primary fs-g">Menu</h2>
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="index.html" class="btn-link fa-center bg-primary">
+                        <img src="images/search/fa-solid_home.svg" alt="home">
+                        <span class="fc-white ff-mediu fa-center fs-m">Home</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="dogs.html" class="btn-link fa-center dog-detaque">
+                        <img src="images/search/fa-solid_dog_white.svg" alt="dogs">
+                        <span class="fc-white ff-mediu fa-center fs-m">Dogs</span>
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="cats.html" class="btn-link fa-center cat-detaque">
+                        <img src="images/search/fa-solid_cat_white.svg" alt="cats">
+                        <span class="fc-white ff-mediu fa-center fs-m">Cats</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <nav class="nav flex-row">
+            <a href="dogs.html" class="dog-detaque fa-center btn-link">
+                <img src="images/search/fa-solid_dog_white.svg" alt="img dog">
+                <span class="fc-white ff-mediu fa-center fs-m">Dogs</span>
+            </a>
+            <a href="cats.html" class="dog-light fa-center btn-link">
+                <img src="images/search/fa-solid_cat.svg" alt="img cat">
+                <span class="fc-primary ff-mediu fa-center fs-m">Cats</span>
+            </a>
+        </nav>
+
+        <div class="pets flex-row">
+            <div class="pet dog-detaque">
+                <img src="images/search/dogs/benji.png" alt="Benji">
+                <div class="efeito"></div>
+                <div class="pet__desc">
+                    <h3 class="ff-bold fs-m fc-primary">Benji</h3>
+                    <h4 class="ff-mediu fs-p fc-primary">Golder</h4>
+                    <label for="pet1" class="favorito"></label>
+                </div>
+            </div>
+
+            <div class="pet dog-detaque">
+                <img src="images/search/dogs/alvan.png" alt="alvan">
+                <div class="efeito"></div>
+                <div class="pet__desc">
+                    <h3 class="ff-bold fs-m fc-primary">Alban</h3>
+                    <h4 class="ff-mediu fs-p fc-primary">Corgi</h4>
+                    <label for="pet2" class="favorito"></label>
+                </div>
+            </div>
+
+            <div class="pet dog-detaque">
+                <img src="images/search/dogs/karsten.png" alt="karsten">
+                <div class="efeito"></div>
+                <div class="pet__desc">
+                    <h3 class="ff-bold fs-m fc-primary">Karsten</h3>
+                    <h4 class="ff-mediu fs-p fc-primary">Bulldog</h4>
+                    <label for="pet3" class="favorito"></label>
+                </div>
+            </div>
+
+            <div class="pet dog-detaque">
+                <img src="images/search/dogs/reigner.png" alt="reigner">
+                <div class="efeito"></div>
+                <div class="pet__desc">
+                    <h3 class="ff-bold fs-m fc-primary">Reigner</h3>
+                    <h4 class="ff-mediu fs-p fc-primary">Pug</h4>
+                    <label for="pet4" class="favorito"></label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

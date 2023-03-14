@@ -1,0 +1,10 @@
+.nav{
+    justify-content: space-between;
+    
+    margin-block: 25px;
+}
+
+.nav a{
+    min-width: 46%;
+
+}

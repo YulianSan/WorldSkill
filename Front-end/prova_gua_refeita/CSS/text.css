@@ -1,0 +1,42 @@
+.fs-gg{
+    font-size: var(--font-gg);
+}
+.fs-g{
+    font-size: var(--font-g);
+}
+.fs-m{
+    font-size: var(--font-m);
+}
+.fs-mp{
+    font-size: var(--font-mp);
+}
+.fs-p{
+    font-size: var(--font-p);
+}
+.fs-pp{
+    font-size: var(--font-pp);
+}
+
+
+.fc-primary{
+    color: var(--text-primary);
+}
+
+.fc-white{
+    color: var(--text-white);
+}
+
+
+.ff-bold{
+    font-family: bold;
+}
+.ff-mediu{
+    font-family: mediu;
+}
+.ff-regular{
+    font-family: regular;
+}
+
+.fa-center{
+    text-align: center;
+}

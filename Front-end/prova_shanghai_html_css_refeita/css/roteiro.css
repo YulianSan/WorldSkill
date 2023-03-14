@@ -1,0 +1,103 @@
+#roteiro .section-content{
+    height: 500px;
+    position: relative;
+}
+
+#roteiro{
+    position: relative;
+}
+.imgs-roteiro{
+    z-index: -1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100vw;
+    left: min(-15px , calc((1400px - 100vw)/2 - 15px) );
+}
+.imgs-roteiro > img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    opacity: 0;
+    left: 0px;
+    top: 0px;
+}
+
+.imgs-roteiro::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.452);
+}
+.out-roteiro{
+    display: none;
+    padding-block: 2rem;
+    height: 90%;
+}
+
+.out-roteiro h3{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.out-roteiro p{
+    font-size: 1.2rem;
+}
+
+#roteiro-1:checked ~ .section-content .out-roteiro-1{
+    display: block;
+}
+#roteiro-2:checked ~ .section-content .out-roteiro-2{
+    display: block;
+}
+#roteiro-3:checked ~ .section-content .out-roteiro-3{
+    display: block;
+}
+#roteiro-4:checked ~ .section-content .out-roteiro-4{
+    display: block;
+}
+
+.circulo-roteiro{
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+#roteiro-1:checked ~ .section-content .circulo-roteiro:nth-child(1){
+    background-color: white;
+}
+#roteiro-2:checked ~ .section-content .circulo-roteiro:nth-child(2){
+    background-color: white;
+}
+#roteiro-3:checked ~ .section-content .circulo-roteiro:nth-child(3){
+    background-color: white;
+}
+#roteiro-4:checked ~ .section-content .circulo-roteiro:nth-child(4){
+    background-color: white;
+}
+
+.controle-roteiro{
+    bottom: 50px;
+    gap: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+#roteiro-1:checked ~ .section-content .imgs-roteiro img:nth-child(1){
+    opacity: 1;
+}
+#roteiro-2:checked ~ .section-content .imgs-roteiro img:nth-child(2){
+    opacity: 1;
+}
+#roteiro-3:checked ~ .section-content .imgs-roteiro img:nth-child(3){
+    opacity: 1;
+}
+#roteiro-4:checked ~ .section-content .imgs-roteiro img:nth-child(4){
+    opacity: 1;
+}
