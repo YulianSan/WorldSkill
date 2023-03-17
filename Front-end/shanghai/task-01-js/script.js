@@ -7,7 +7,8 @@ btn_search.addEventListener('click', clickBtnSearch);
 function clickBtnSearch(){
     let value = inp_search.value;
 
-    let txt = text.textContent;
+    let txt = text.innerHTML;
+    console.log(txt);
     let regExp = new RegExp(`(${value})`, 'g');
     let criarDestaque = (t)=>{
         console.log(t);
@@ -15,7 +16,7 @@ function clickBtnSearch(){
             g = Math.floor(Math.random()*255), 
             b = Math.floor(Math.random()*255);
 
-        return `<span style="background-color: rgb( ${r}, ${g}, ${b})">${t}</span>`
+        return `<span style="background-color: rgb( ${r}, ${g}, ${b})">${t}</span>`;
     }
     let encontrados = txt.replace(regExp, criarDestaque( '$1' ));
     

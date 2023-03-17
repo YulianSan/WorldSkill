@@ -1,0 +1,56 @@
+adicionar isso no .htaccess
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /prova_gua_refeita/
+	// url secure/reservations/:id
+	RewriteRule ^secure/reservations/(.*)$ /prova_gua_refeita/wp-admin/admin.php?page=rtb-bookings&id=$1&%{QUERY_STRING} [L]
+	// url base do admin wordpress, isso substitui o wp-admin
+	RewriteRule ^secure/(.*)$ /prova_gua_refeita/wp-admin/$1?%{QUERY_STRING} [L]
+</IfModule>
+
+
+
+// pega o evento quando um post é adicionado
+add_action('save_post_rtb-booking', 'san_save_reservations_in_custom_table');
+
+// pega o evento quando o plugin é ativo
+register_activation_hook(__FILE__, 'san_register_custom_table_reservations');
+
+//adiciona a tabela
+function san_register_custom_table_reservations(){
+    global $wpdb;
+
+    $wpdb->query("
+    CREATE TABLE reservations( 
+        id int not null primary key auto_increment, 
+        date varchar(11) not null, 
+        time varchar(10) not null, 
+        party varchar(12) not null, 
+        name varchar(255) not null, 
+        email varchar(255) not null, 
+        phone varchar(20) not null)
+    ");
+}
+
+// insert dentro da tabela, quando o evento de save do post type rtb-booking
+function san_save_reservations_in_custom_table(){
+    global $wpdb;
+
+    $wpdb->insert('reservations', [
+        'date' => $_POST['rtb-date'],
+        'time' => $_POST['rtb-time'],
+        'party' => $_POST['rtb-party'],
+        'name' => $_POST['rtb-name'],
+        'email' => $_POST['rtb-email'],
+        'phone' => $_POST['rtb-phone'],
+    ]);
+}
+
+
+// procurar o add_menu_page para alterar o nome do menu do plugin
+
+// ver o nome da tabela personalizada que eles criaram que é rtbBookingsTable
+// ir na função bookings_data e adicionar ao array $args o indice 'p' quando o $_GET tiver o indice 'id'
+// depois procurar 'switch' dentro da função column _default e alterar o case 'name' para que tenha um link <a></a>
+// alem disso alterar o case 'date' dentro das ações para que tenha uma ação show ou ver
