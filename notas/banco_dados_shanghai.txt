@@ -1,0 +1,46 @@
+use este comando para criar model, seeder e migration
+php artisan make:model NomeDaTabela --ms
+
+admins - 
+	id
+	username
+	last_login
+	created_at
+	updated_at
+
+user - 
+	id
+	username
+	last_login
+	password
+	created_at
+	updated_at
+	reason_block
+	deleted_at
+
+game -
+	id
+	title
+	deleted_at
+	created_at
+	updated_at
+	description
+	slug
+	user_id
+
+gameVersion -
+	id
+	version
+	gamePath
+	created_at
+	updated_at
+	game_id
+
+scores - 
+	id
+	score
+	user_id
+	game_version_id
+	created_at
+	updated_at
+	

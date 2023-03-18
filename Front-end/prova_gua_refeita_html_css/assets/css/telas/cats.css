@@ -1,0 +1,5 @@
+.cel{
+    --bg-destaque: var(--bg-o);
+    --bg: var(--bg-ol);
+    --bg-light: var(--bg-oll);
+}

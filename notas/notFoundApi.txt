@@ -1,0 +1,5 @@
+// coloque isso dentro do vendor/laravel/framework/src/illuminate/Foundation/Exceptions/Handler.php
+// retorna um mensagem customizada quando não encontra uma rota
+if ($e instanceof NotFoundHttpException && $request->is('301_module_c/api/v1/*')) {
+	return response()->json(['message' => 'Not Found!'], 404);
+}	

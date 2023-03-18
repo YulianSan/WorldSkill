@@ -1,0 +1,12 @@
+// $ordenar é uma variável que vem do $req
+// você retorna o dado que vai ser usado para ordenar
+
+->sortByDesc( function ($jogo) use($ordenar){
+                if($ordenar == 'popular'){
+                    return $jogo->scoreCount;
+                }
+                if($ordenar == 'uploadate'){
+	        return $jogo->created_at;
+	}
+	return $jogo->title;
+});

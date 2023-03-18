@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/css/colors.css">
+    <link rel="stylesheet" href="assets/css/font.css">
+    <link rel="stylesheet" href="assets/css/telas/pets.css">
+    <link rel="stylesheet" href="assets/css/telas/dogs.css">
+    <link rel="stylesheet" href="assets/css/telas/menu.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cel pr">
+        <input type="checkbox" name="menu" id="menu">
+
+        <input type="checkbox" name="pet-1" id="pet-1">
+        <input type="checkbox" name="pet-2" id="pet-2">
+        <input type="checkbox" name="pet-3" id="pet-3">
+        <input type="checkbox" name="pet-4" id="pet-4">
+
+        <header class="header-pets d-flex flex-center">
+            <a class="btn-back pa" href="index.html"></a>
+            <h1 class="title text-center">Search</h1>
+        </header>
+        <label class="icon-menu pa" for="menu"></label>
+        <div class="menu pa">
+            <h1 class="title text-center">Menu</h1>
+            <nav class="d-flex flex-column flex-between links-pets">
+                <a href="#" class="link-pets bg-home tw button home text-center">
+                    Home
+                </a>
+                <a href="#" class="link-pets bg-dog tw button dog-w text-center">
+                    Dogs
+                </a>
+                <a href="#" class="link-pets bg-cat tw button cat-w text-center">
+                    Cats
+                </a>
+            </nav>
+        </div>
+        <label for="search" class="container-search d-flex flex-center">
+            <img src="assets/images/1-search/search.svg" class="icon-search" alt="search"/>
+            <input class="search" name="search" id="search">
+        </label>
+        <nav class="d-flex flex-row flex-between links-pets">
+            <a href="#" class="link-pets bg-d tw button dog-w text-center">
+                Dogs
+            </a>
+            <a href="#" class="link-pets bg-l tb button cat text-center">
+                Cats
+            </a>
+        </nav>
+        <div class="pets d-flex flex-between flex-wrap pr">
+            <div class="pet pr">
+                <div class="pet-fundo d-flex flex-center">
+                    <img src="assets/images/1-search/dogs/benji.png" class="pr pet-img" alt="benji">
+                    <div class="effect pa"></div>
+                </div>
+                <div class="pet-desc pa">
+                    <h2 class="petname">Benji</h2>
+                    <h3 class="breed">Golden</h3>
+                    <label for="pet-1" class="pa pet-favorite"></label>
+                </div>
+            </div>
+            <div class="pet pr">
+                <div class="pet-fundo d-flex flex-center">
+                    <img src="assets/images/1-search/dogs/alvan.png" class="pr pet-img" alt="alvan">
+                    <div class="effect pa"></div>
+                </div>
+                <div class="pet-desc pa">
+                    <h2 class="petname">Alvan</h2>
+                    <h3 class="breed">Corgi</h3>
+                    <label for="pet-2" class="pa pet-favorite"></label>
+                </div>
+            </div>
+            <div class="pet pr">
+                <div class="pet-fundo d-flex flex-center">
+                    <img src="assets/images/1-search/dogs/karsten.png" class="pr pet-img" alt="karsten">
+                    <div class="effect pa"></div>
+                </div>
+                <div class="pet-desc pa">
+                    <h2 class="petname">karsten</h2>
+                    <h3 class="breed">Bulldog</h3>
+                    <label for="pet-3" class="pa pet-favorite"></label>
+                </div>
+            </div>
+            <div class="pet pr">
+                <div class="pet-fundo d-flex flex-center">
+                    <img src="assets/images/1-search/dogs/reigner.png" class="pr pet-img" alt="reigner">
+                    <div class="effect pa"></div>
+                </div>
+                <div class="pet-desc pa">
+                    <h2 class="petname">Reigner</h2>
+                    <h3 class="breed">Pug</h3>
+                    <label for="pet-4" class="pa pet-favorite"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

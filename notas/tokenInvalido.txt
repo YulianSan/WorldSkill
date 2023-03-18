@@ -1,0 +1,8 @@
+// coloque isso dentro do vendor/laravel/framework/src/illuminate/Foundation/Exceptions/Handler.php
+// na função unauthenticated
+
+if ($request->is('url base da api/*')) {
+	return response()->json(['message' => 'Não autenticado'], 401);
+}
+        
+return redirect()->guest(route('login'));

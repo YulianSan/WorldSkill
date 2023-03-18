@@ -1,0 +1,195 @@
+.bg-d{
+    background-color: var(--bg-destaque);
+}
+
+.bg-l{
+    background-color: var(--bg-light);
+}
+
+.cel{
+    box-sizing: border-box;
+    padding: 25px;
+}
+.header-pets{
+    position: static;
+    z-index: 10000;
+    margin-block: 20px 30px;
+}
+.btn-back{
+    left: 25px;
+    top: 43px;
+    width: 35px;
+    height: 35px;
+    background: url(../../images/1-search/chevron-left.svg) center no-repeat;
+    background-size: cover;
+    transition: left .2s linear;
+}
+
+.btn-back:hover{
+    left: 15px;
+}
+
+.icon-menu{
+    height: 30px;
+    width: 30px;
+    right: 30px;
+    top: 45px;
+    background: url(../../images/1-search/menu-open.svg) center no-repeat;
+    z-index: 2000;
+}
+
+#menu:checked ~ .header-pets .icon-menu{
+    background: url(../../images/1-search/menu-close.svg) center no-repeat;
+}
+.icon-search{
+
+    width: 28px;
+    height: 28px;
+}
+
+.container-search{
+    background-color: var(--bg-light);
+    border-radius: 40px;
+    padding: .4em .8em;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.search{
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+.links-pets{
+    gap: 20px;
+}
+.link-pets{
+    flex: 1;
+    border-radius: 100px;
+    padding: 13px 55px;
+    text-decoration: none;
+    transition: transform .1s linear;
+}
+
+.link-pets.dog-w{
+    background-image: url(../../images/1-search/fa-solid_dog_white.svg);
+    background-position: 15px 50%;
+    background-repeat: no-repeat;
+}
+
+.link-pets.dog{
+    background-image: url(../../images/1-search/fa-solid_dog.svg);
+    background-position: 15px 50%;
+    background-repeat: no-repeat;
+}
+
+.link-pets.cat{
+    background-image: url(../../images/1-search/fa-solid_cat.svg);
+    background-position: 15px 50%;
+    background-repeat: no-repeat;
+}
+
+.link-pets.cat-w{
+    background-image: url(../../images/1-search/fa-solid_cat_white.svg);
+    background-position: 15px 50%;
+    background-repeat: no-repeat;
+}
+
+
+.link-pets.home{
+    background-image: url(../../images/1-search/fa-solid_home.svg);
+    background-position: 15px 50%;
+    background-repeat: no-repeat;
+}
+
+.link-pets:hover{
+    transform: scale(1.08);
+}
+.pets{
+    margin-top: 25px;
+    row-gap: 30px;
+    z-index: 0;
+}
+.pet{
+    height: 240px;
+    width: 47%;
+    border-radius: 30px;
+    background-color: var(--bg-destaque);
+    overflow: hidden;
+    transition: background-color .4s .3s;
+}
+
+.pet:hover{
+    background-color: var(--tw);
+}
+
+.pet-desc{
+    box-sizing: border-box;
+    padding: .5rem 1rem;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-color: var(--tw);
+}
+.pet:hover *{
+    color: var(--tw);
+}
+.pet:hover .pet-desc{
+    background-color: var(--bg-destaque);
+}
+.pet-favorite{
+    width: 24px;
+    height: 28px;
+    background: url(../../images/1-search/hearthome.svg) center no-repeat;
+    background-size: cover;
+    right: 20px;
+    bottom: 15px;
+}
+
+.pet-img{
+    top: 40px;
+    transition: top .4s .4s;
+}
+
+.pet:hover .pet-img{
+    top: 30px;
+}
+
+#pet-1:checked ~ .pets .pet:nth-child(1) .pet-favorite,
+#pet-2:checked ~ .pets .pet:nth-child(2) .pet-favorite,
+#pet-3:checked ~ .pets .pet:nth-child(3) .pet-favorite,
+#pet-4:checked ~ .pets .pet:nth-child(4) .pet-favorite{
+    background-image: url(../../images/1-search/hearthome-active.svg);
+}
+
+#pet-1:checked ~ .pets .pet:nth-child(1):hover .pet-favorite,
+#pet-2:checked ~ .pets .pet:nth-child(2):hover .pet-favorite,
+#pet-3:checked ~ .pets .pet:nth-child(3):hover .pet-favorite,
+#pet-4:checked ~ .pets .pet:nth-child(4):hover .pet-favorite{
+    background-image: url(../../images/1-search/hearthome-white-active.svg);
+}
+
+.pets .pet:nth-child(1):hover .pet-favorite,
+.pets .pet:nth-child(2):hover .pet-favorite,
+.pets .pet:nth-child(3):hover .pet-favorite,
+.pets .pet:nth-child(4):hover .pet-favorite{
+    background-image: url(../../images/1-search/hearthome-white.svg);
+}
+
+.effect{
+    opacity: 0;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 120px solid var(--bg);
+    transition: width .3s, height .3s;
+}
+
+.pet:hover .effect{
+    opacity: 1;
+    width: 300px;
+    height: 300px;
+}

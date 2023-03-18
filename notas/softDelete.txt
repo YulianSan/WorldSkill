@@ -1,0 +1,13 @@
+// quando criar um migrate adicione isso
+$table->softDeletes();
+
+// no model adicione no use
+use ..., SoftDeletes
+
+// para pegar dados deletados use Model::withTrashed()->get();
+
+// pegar apenas os deletados use Model::onlyTrashed()->get();
+
+// para que as rotas vejam os deletados adicione:
+
+Route::method('url',[controller::class, 'function'])->withTrashed();

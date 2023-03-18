@@ -1,0 +1,18 @@
+:root{
+    /* cor do texto */
+    --tb: #2c4674;
+    --tw: #ffffff;
+
+    /* cor home */
+    --bg-bl: #c8daff;
+
+    /* cor das telas dogs */
+    --bg-g: #519e8a;
+    --bg-gl: #cbe0db;
+    --bg-gll: #eaf3f1;
+
+    /* cor das telas cats */
+    --bg-o: #d1723f;
+    --bg-ol: #e8dbd4;
+    --bg-oll: #f6f1ee;
+}

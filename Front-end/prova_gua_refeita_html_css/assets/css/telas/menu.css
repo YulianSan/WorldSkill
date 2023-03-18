@@ -1,0 +1,26 @@
+.menu{
+    box-sizing: border-box;
+    border-radius: 40px;
+    border: 1px solid var(--tb);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(white 30%, rgba(255, 255, 255, 0.6));
+    transform: translateX(100%);
+    transition: transform .4s;
+    padding: 25px;
+    z-index: 1000;
+}
+
+#menu:checked ~ .menu{
+    transform: translateX(0);
+}
+
+.menu .title{
+    margin-block: 1.2rem 2.5rem;
+}
+
+.menu .link-pets{
+    padding-block: 1.1rem;
+}
